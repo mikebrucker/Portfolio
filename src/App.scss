@@ -17,10 +17,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
+  animation: change-background-color infinite 10s ease-in-out;
 }
 
 @keyframes App-logo-spin {
@@ -29,5 +26,15 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes change-background-color {
+  0%,
+  100% {
+    background-color: #282c34;
+  }
+  50% {
+    background-color: #61dafb;
   }
 }
