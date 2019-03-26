@@ -1,16 +1,26 @@
 import React from "react";
-import { Toolbar, Typography } from "@material-ui/core";
+import { AppBar, Typography } from "@material-ui/core";
+import { withStyles } from "@material-ui/core/styles";
 import "./components.scss";
-function Footer() {
+
+const styles = theme => ({
+  root: {
+    width: "100%",
+    textAlign: "center",
+    padding: theme.spacing.unit * 2
+  }
+});
+
+const Footer = ({ classes }) => {
   return (
     <footer className="Footer">
-      <Toolbar color="primary">
+      <AppBar className={classes.root} position="static" color="primary">
         <Typography color="secondary" variant="h4" noWrap>
           &copy; {new Date().getFullYear()} Mike Brucker
         </Typography>
-      </Toolbar>
+      </AppBar>
     </footer>
   );
-}
+};
 
-export default Footer;
+export default withStyles(styles)(Footer);
