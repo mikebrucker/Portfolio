@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link as RouterLink, withRouter } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import { AppBar, Toolbar, IconButton, Typography } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import Link from "@material-ui/core/Link";
@@ -19,8 +19,8 @@ const styles = theme => ({
   openDrawer: {
     backgroundColor: "#00e5ff",
     height: "100%",
-    maxWidth: 300,
-    minWidth: 200
+    maxWidth: 320,
+    width: "80vh"
   },
   listSubHeader: {
     borderBottom: "1px solid #424242"
@@ -38,28 +38,28 @@ class Navbar extends Component {
     });
   };
 
-  goToProject = project => {
-    console.log(project);
-  };
-
   render() {
     const { classes } = this.props;
 
     const sideMenu = (
       <div>
-        <ListSubheader className={classes.listSubHeader}>
-          Projects
-        </ListSubheader>
         <List>
+          <ListSubheader className={classes.listSubHeader}>
+            Projects
+          </ListSubheader>
           {projects.map(project => {
             return (
-              <ListItem
-                button
+              <Link
                 key={project.id}
-                onClick={this.goToProject.bind(this, project.name)}
+                color="secondary"
+                component={RouterLink}
+                underline="none"
+                to={`/${project.name}`}
               >
-                <ListItemText primary={project.name} />
-              </ListItem>
+                <ListItem button>
+                  <ListItemText primary={project.name} />
+                </ListItem>
+              </Link>
             );
           })}
         </List>
@@ -67,7 +67,7 @@ class Navbar extends Component {
     );
 
     return (
-      <nav className="Navbar">
+      <nav id="topOfPage" className="Navbar">
         <AppBar position="sticky" color="primary">
           <Toolbar>
             <Link
@@ -110,4 +110,4 @@ class Navbar extends Component {
   }
 }
 
-export default withStyles(styles)(withRouter(Navbar));
+export default withStyles(styles)(Navbar);

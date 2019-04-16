@@ -1,6 +1,6 @@
 import React from "react";
-import { Link as RouterLink, withRouter } from "react-router-dom";
-import { Link } from "@material-ui/core";
+import { Link as RouterLink } from "react-router-dom";
+import Link from "@material-ui/core/Link";
 import "./projects.scss";
 
 const ProjectSummary = ({ project }) => {
@@ -11,13 +11,14 @@ const ProjectSummary = ({ project }) => {
         color="secondary"
         component={RouterLink}
         underline="none"
-        to={`/${project.id}`}
+        onClick={window.scrollTo(0, 0)}
+        to={`/${project.name}`}
       >
         <h1>{project.name}</h1>
       </Link>
       <div>{project.tech}</div>
       <div>{project.detail}</div>
-      <div>project.images show only first</div>
+      <div className="images">project.images show only first</div>
     </div>
   );
 };
