@@ -1,5 +1,5 @@
 import React from "react";
-import "./layout.scss";
+import "../../scss/Splash.scss";
 import mikeskydivegif from "../../images/mikeskydive.gif";
 import Projects from "../projects/Projects";
 

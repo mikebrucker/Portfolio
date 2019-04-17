@@ -5,6 +5,8 @@ import { FaGithub } from "react-icons/fa";
 import Button from "@material-ui/core/Button";
 
 const Project = ({ project }) => {
+  const projectIcon = project && project.icon ? <project.icon /> : null;
+
   const techStack =
     project &&
     project.tech.map((tech, i, arr) => {
@@ -20,13 +22,12 @@ const Project = ({ project }) => {
       <div>
         <a href={`http://${project.links.live}`}>
           <Button variant="contained" color="primary">
-            Live
+            Live {projectIcon}
           </Button>
         </a>
         <a href={`http://${project.links.repo}`}>
           <Button variant="contained" color="primary">
-            Repo
-            <FaGithub />
+            Repo <FaGithub />
           </Button>
         </a>
       </div>

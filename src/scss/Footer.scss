@@ -1,0 +1,32 @@
+.Footer {
+  .footer-logo {
+    margin: 0 auto;
+    height: 8vmin;
+    width: 8vmin;
+    color: #282c34;
+    animation: footer-logo-spin infinite 20s linear,
+      change-color infinite 10s ease-in-out;
+  }
+  .footer-links {
+    display: inline-block;
+  }
+}
+
+@keyframes footer-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes change-color {
+  0%,
+  100% {
+    color: #282c34;
+  }
+  50% {
+    color: #61dafb;
+  }
+}

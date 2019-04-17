@@ -1,10 +1,10 @@
 import React from "react";
 import logo from "./logo.svg";
-
+import "../../scss/ReactLogo.scss";
 const ReactLogo = () => {
   return (
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
+    <header className="ReactLogo">
+      <img src={logo} className="AppLogo" alt="logo" />
     </header>
   );
 };

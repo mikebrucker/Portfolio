@@ -7,9 +7,8 @@ import MenuIcon from "@material-ui/icons/Menu";
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
 import ListSubheader from "@material-ui/core/ListSubheader";
-import { projects } from "../projects/projectsData";
+import { projects, aboutMe } from "../projects/projectsData";
 
 const styles = theme => ({
   center: {
@@ -41,27 +40,56 @@ class Navbar extends Component {
   render() {
     const { classes } = this.props;
 
+    // sideMenu has Projects listed and My personal links listed
     const sideMenu = (
       <div>
         <List>
           <ListSubheader className={classes.listSubHeader}>
             Projects
           </ListSubheader>
-          {projects.map(project => {
-            return (
-              <Link
-                key={project.id}
-                color="secondary"
-                component={RouterLink}
-                underline="none"
-                to={`/${project.name}`}
-              >
-                <ListItem button>
-                  <ListItemText primary={project.name} />
-                </ListItem>
-              </Link>
-            );
-          })}
+          {projects &&
+            projects.map(project => {
+              const projectIcon = project.icon ? (
+                <project.icon className="sidebar-icon" />
+              ) : null;
+              return (
+                <Link
+                  key={project.id}
+                  to={`/${project.name}`}
+                  component={RouterLink}
+                  color="secondary"
+                  underline="none"
+                >
+                  <ListItem button>
+                    {projectIcon}&nbsp;{project.name}
+                  </ListItem>
+                </Link>
+              );
+            })}
+          <ListSubheader className={classes.listSubHeader}>
+            Mike Brucker
+          </ListSubheader>
+          {aboutMe &&
+            aboutMe.links &&
+            aboutMe.links.map(link => {
+              const linkIcon = link.icon ? (
+                <link.icon className="sidebar-icon" />
+              ) : null;
+              return (
+                <Link
+                  key={link.link}
+                  href={link.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  color="secondary"
+                  underline="none"
+                >
+                  <ListItem button>
+                    {linkIcon}&nbsp;{link.name}
+                  </ListItem>
+                </Link>
+              );
+            })}
         </List>
       </div>
     );

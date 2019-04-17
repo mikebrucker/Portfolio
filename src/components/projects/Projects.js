@@ -1,7 +1,7 @@
 import React from "react";
 import { projects } from "./projectsData";
 import ProjectSummary from "./ProjectSummary";
-import "./projects.scss";
+import "../../scss/Projects.scss";
 
 const Projects = () => {
   const myProjects = projects.map(project => {
