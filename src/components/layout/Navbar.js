@@ -8,7 +8,7 @@ import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListSubheader from "@material-ui/core/ListSubheader";
-import { projects, aboutMe } from "../projects/projectsData";
+import { projects, aboutMe } from "../projects/data";
 
 const styles = theme => ({
   center: {
@@ -69,6 +69,11 @@ class Navbar extends Component {
           <ListSubheader className={classes.listSubHeader}>
             Mike Brucker
           </ListSubheader>
+          <RouterLink to="/profile" color="secondary" underline="none">
+            <ListItem button>
+              {aboutMe && aboutMe.name ? aboutMe.name : null}
+            </ListItem>
+          </RouterLink>
           {aboutMe &&
             aboutMe.links &&
             aboutMe.links.map(link => {

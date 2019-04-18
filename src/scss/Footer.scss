@@ -1,12 +1,13 @@
 .Footer {
   .footer-logo {
     margin: 0 auto;
-    height: 8vmin;
-    width: 8vmin;
+    height: 6vmin;
+    width: 6vmin;
     color: #282c34;
     animation: footer-logo-spin infinite 20s linear,
       change-color infinite 10s ease-in-out;
   }
+
   .footer-links {
     display: inline-block;
   }

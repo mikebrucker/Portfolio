@@ -14,6 +14,7 @@ $secondary-font-light: #eceff1;
     overflow: hidden;
     padding-top: 56.25%;
     margin-bottom: -1px;
+
     iframe {
       z-index: -99;
       position: absolute;
@@ -24,6 +25,7 @@ $secondary-font-light: #eceff1;
       border: 0;
     }
   }
+
   img {
     margin-bottom: -4px;
     width: 100%;

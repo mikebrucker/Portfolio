@@ -1,10 +1,17 @@
 import React from "react";
-import { connect } from "react-redux";
-import { projects } from "./projectsData";
+import { projects } from "./data";
 import { FaGithub } from "react-icons/fa";
 import Button from "@material-ui/core/Button";
+import "../../scss/Project.scss";
 
-const Project = ({ project }) => {
+const Project = ({ location }) => {
+  const projectName =
+    location && location.pathname ? location.pathname.substring(1) : null;
+
+  const project = projectName
+    ? projects.filter(proj => proj.name === projectName)[0]
+    : null;
+
   const projectIcon = project && project.icon ? <project.icon /> : null;
 
   const techStack =
@@ -13,19 +20,20 @@ const Project = ({ project }) => {
       return arr.length - 1 !== i ? (
         <span key={tech}>{tech}, </span>
       ) : (
-        <span key={tech}>{tech}. </span>
+        // last item
+        <span key={tech}>{tech}.</span>
       );
     });
 
   const links =
     project && project.links ? (
       <div>
-        <a href={`http://${project.links.live}`}>
+        <a href={project.links.live} target="_blank" rel="noopener noreferrer">
           <Button variant="contained" color="primary">
             Live {projectIcon}
           </Button>
         </a>
-        <a href={`http://${project.links.repo}`}>
+        <a href={project.links.repo} target="_blank" rel="noopener noreferrer">
           <Button variant="contained" color="primary">
             Repo <FaGithub />
           </Button>
@@ -43,24 +51,13 @@ const Project = ({ project }) => {
   return project ? (
     <div className="Project">
       <h1>{project.name}</h1>
-      <h3>{techStack}</h3>
+      <h3>Built with {techStack}</h3>
       {links}
       <p>{project.detail}</p>
-      <div className="images">{images}</div>
+      <div>{images}</div>
     </div>
   ) : (
     <div className="Project">No Project with that name</div>
   );
 };
-
-const mapStateToProps = (state, ownProps) => {
-  const projectName = ownProps.match.params.project;
-  const project = projectName
-    ? projects.filter(proj => proj.name === projectName)[0]
-    : null;
-  return {
-    project
-  };
-};
-
-export default connect(mapStateToProps)(Project);
+export default Project;

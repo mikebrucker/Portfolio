@@ -5,7 +5,7 @@ import { withStyles } from "@material-ui/core/styles";
 import { FaReact } from "react-icons/fa";
 import "../../scss/Footer.scss";
 import Link from "@material-ui/core/Link";
-import { aboutMe } from "../projects/projectsData";
+import { aboutMe } from "../projects/data";
 
 const styles = theme => ({
   root: {
@@ -18,12 +18,13 @@ const styles = theme => ({
   }
 });
 
-const Footer = ({ classes }) => {
+const Footer = ({ classes, scrollToTopOfPage }) => {
   return (
     <footer className="Footer">
+      <div className="footer-grow" />
       <AppBar className={classes.root} position="static" color="primary">
-        <Typography color="secondary" variant="h4">
-          <RouterLink to="/">
+        <Typography color="secondary" variant="h5">
+          <RouterLink onClick={scrollToTopOfPage} to="/">
             &copy; {new Date().getFullYear()} Mike Brucker{" "}
           </RouterLink>
           <div className="footer-links">
@@ -36,6 +37,7 @@ const Footer = ({ classes }) => {
                     className={classes.icons}
                     key={link.link}
                     href={link.link}
+                    onClick={scrollToTopOfPage}
                     target="_blank"
                     rel="noopener noreferrer"
                     color="secondary"
@@ -47,9 +49,9 @@ const Footer = ({ classes }) => {
               })}
           </div>
         </Typography>
-        <Link to="/spinninglogo">
+        <RouterLink onClick={scrollToTopOfPage} to="/spinninglogo">
           <FaReact className="footer-logo" />
-        </Link>
+        </RouterLink>
       </AppBar>
     </footer>
   );
