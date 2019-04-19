@@ -9,11 +9,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 #root {
+  background-color: snow;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
+
 .footer-grow {
   flex-grow: 1;
 }

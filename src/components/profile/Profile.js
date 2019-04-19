@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { aboutMe } from "../projects/data";
 import Button from "@material-ui/core/Button";
 import "../../scss/Profile.scss";
 
-const Project = () => {
+const Profile = () => {
+  useEffect(() => {
+    document.title = aboutMe.name;
+  });
+
   const links =
     aboutMe && aboutMe.links
       ? aboutMe.links.map(link => {
@@ -31,4 +35,4 @@ const Project = () => {
     <div className="Profile">Loading...</div>
   );
 };
-export default Project;
+export default Profile;

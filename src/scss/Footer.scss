@@ -8,8 +8,24 @@
       change-color infinite 10s ease-in-out;
   }
 
+  .footer-link-home {
+    transition: color 0.33s;
+  }
+
+  .footer-link-home:hover {
+    color: antiquewhite;
+  }
+
   .footer-links {
     display: inline-block;
+    svg {
+      vertical-align: text-top;
+      transition: fill 0.33s;
+    }
+
+    svg:hover {
+      fill: antiquewhite;
+    }
   }
 }
 

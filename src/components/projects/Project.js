@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { projects } from "./data";
 import { FaGithub } from "react-icons/fa";
 import Button from "@material-ui/core/Button";
 import "../../scss/Project.scss";
 
 const Project = ({ location }) => {
+  useEffect(() => {
+    document.title = project.name;
+  });
+
   const projectName =
     location && location.pathname ? location.pathname.substring(1) : null;
 
@@ -16,6 +20,7 @@ const Project = ({ location }) => {
 
   const techStack =
     project &&
+    project.tech &&
     project.tech.map((tech, i, arr) => {
       return arr.length - 1 !== i ? (
         <span key={tech}>{tech}, </span>
@@ -41,6 +46,11 @@ const Project = ({ location }) => {
       </div>
     ) : null;
 
+  const detail =
+    project && project.detail
+      ? project.detail.map((detail, i) => <p key={i}>{detail}</p>)
+      : null;
+
   const images =
     project &&
     project.images &&
@@ -53,7 +63,7 @@ const Project = ({ location }) => {
       <h1>{project.name}</h1>
       <h3>Built with {techStack}</h3>
       {links}
-      <p>{project.detail}</p>
+      <div>{detail}</div>
       <div>{images}</div>
     </div>
   ) : (

@@ -24,7 +24,11 @@ const Footer = ({ classes, scrollToTopOfPage }) => {
       <div className="footer-grow" />
       <AppBar className={classes.root} position="static" color="primary">
         <Typography color="secondary" variant="h5">
-          <RouterLink onClick={scrollToTopOfPage} to="/">
+          <RouterLink
+            className="footer-link-home"
+            onClick={scrollToTopOfPage}
+            to="/"
+          >
             &copy; {new Date().getFullYear()} Mike Brucker{" "}
           </RouterLink>
           <div className="footer-links">
