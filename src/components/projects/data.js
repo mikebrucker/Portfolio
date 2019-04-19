@@ -105,7 +105,8 @@ export const projects = [
     },
     tech: ["React", "Redux", "Firebase/Firestore"],
     detail: [
-      "Rostered is an app which features full CRUD functionality that I built to keep track of all of the hockey teams I play on, including the players, games, and schedules. It is written in React, utilizes Redux for state managemant, and uses Google Firebase's data storage Firestore for the back-end. This single page app nests many components to add, edit, and delete each piece of data. Each component is initially hidden until you click the corresponding button."
+      "Rostered is an app which features full CRUD functionality that I built to keep track of all of the hockey teams I play on, including the players, games, and schedules. It is written in React, utilizes Redux for state managemant, and uses Google Firebase's data storage Firestore for the back-end. This single page app nests many components to add, edit, and delete each piece of data. Each component is initially hidden until you click the corresponding button.",
+      "A server side function is run when teams are created to add its own id to a key: 'value' pair, teamId: XXXXXX. This is necessary for other components to display and update the correct team data."
     ],
     images: [rostered0, rostered1, rostered2, rostered3, rostered4, rostered5]
   },
@@ -119,7 +120,8 @@ export const projects = [
     },
     tech: ["React"],
     detail: [
-      "ToDo board like a Trello board. Keep track of ToDos in columns of Backlog, ToDo, InProgress, Completed. Each ToDo can be removed and has a priority of low, medium, or high, which is indicated by it's border color. Arrow buttons can move the ToDo into the next or previous column. Each action to add, remove, or move a ToDo will store the state of the board in localStorage to keep track on each site visit or refresh."
+      "This is a ToDo board like a Trello board. Keep track of ToDos in columns of Backlog, ToDo, InProgress, Completed. Each ToDo can be removed and has a priority of low, medium, or high, which is indicated by it's border color. ToDo's also have a timestamp of when it was created. Arrow buttons can move the ToDo into the next or previous column.",
+      "Each action to add, remove, or move a ToDo will store the state of the board in localStorage to keep track on each site visit or refresh."
     ],
     images: [bruckerboard1]
   },
@@ -133,7 +135,13 @@ export const projects = [
     },
     tech: ["Javascript", "jQuery", "HTML/CSS"],
     detail: [
-      "This was my JavaScript Capstone project in school, the first 'big' JavaScript application I made. It can most definitely be improved but I would rather rebuild it instead. This was also the first time I ever used jQuery and I may have gotten a bit carried away with it :P. This project shows that I can learn at a very quick pace and build something that looks good and functions well."
+      "This was my JavaScript Capstone project in school, the first 'big' JavaScript application I made. It can most definitely be improved but I would rather rebuild it instead. This was also the first time I ever used jQuery and I may have gotten a bit carried away with it :P. This project shows that I can learn at a very quick pace and build something that looks good and functions well.",
+      "Event listeners listen for keyboard input but if you are on mobile you can click 'Guess Letter' to show a virtual keyboard",
+      "On the Begin screen click the button or press 'B' to begin",
+      "When spin button is shown click or press 'S' to spin",
+      "When typing into the solve button input and before you spin, you can not accidentally guess a letter.",
+      "Win 10 games to win your total bank.",
+      "If you guess a wrong letter 10 times you lose."
     ],
     images: [wheelOfJavascript]
   },
