@@ -79,7 +79,7 @@ export const aboutMe = {
   education: [
     {
       school: "New York Code and Design Academy",
-      degree: "Certification of Web Development",
+      degree: "Certificate of Web Development",
       from: "2018-07-23",
       to: "2018-10-17"
     },
@@ -128,7 +128,7 @@ export const projects = [
     name: "Wheel of JavaScript",
     icon: GiCartwheel,
     links: {
-      live: "http://mikebrucker.com/Wheel-Of-Fortune/",
+      live: "https://mikebrucker.github.io/Wheel-Of-Fortune/",
       repo: "https://github.com/mikebrucker/Wheel-Of-Fortune"
     },
     tech: ["Javascript", "jQuery", "HTML/CSS"],

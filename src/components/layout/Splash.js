@@ -25,22 +25,26 @@ const Splash = ({ scrollToTopOfPage }) => {
 
   return (
     <main className="Splash">
-      <img id="splashGif" src={mikeskydivegif} alt="Me Skydiving" />
-      <div id="splashText" className="splash-text-container">
-        <div className="splash-text-first splash-text">
-          Hi! I'm Mike Brucker, a Web Developer
+      {mikeskydivegif ? (
+        <div>
+          <img id="splashGif" src={mikeskydivegif} alt="Me Skydiving" />
+          <div id="splashText" className="splash-text-container">
+            <div className="splash-text-first splash-text">
+              Hi! I'm Mike Brucker, a Web Developer
+            </div>
+          </div>
+          <div className="splash-text-container">
+            <div className="splash-text-second splash-text">
+              Welcome to my Portfolio
+            </div>
+          </div>
+          <div className="splash-text-container">
+            <div className="splash-text-third splash-text">
+              Come Dive Into My Code Below!
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="splash-text-container">
-        <div className="splash-text-second splash-text">
-          Welcome to my Portfolio
-        </div>
-      </div>
-      <div className="splash-text-container">
-        <div className="splash-text-third splash-text">
-          Come Dive Into My Code Below!
-        </div>
-      </div>
+      ) : null}
       <Projects scrollToTopOfPage={scrollToTopOfPage} />
     </main>
   );
