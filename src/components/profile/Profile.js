@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { aboutMe } from "../projects/data";
 import Button from "@material-ui/core/Button";
+import Moment from "react-moment";
 import "../../scss/Profile.scss";
 
 const Profile = () => {
@@ -13,7 +14,7 @@ const Profile = () => {
       ? aboutMe.links.map(link => {
           return (
             <a
-              key={link.link}
+              key={link.name}
               href={link.link}
               target="_blank"
               rel="noopener noreferrer"
@@ -26,10 +27,44 @@ const Profile = () => {
         })
       : null;
 
+  const about =
+    aboutMe && aboutMe.about
+      ? aboutMe.about.map((para, i) => <p key={i}>{para}</p>)
+      : null;
+
+  const firstImage =
+    aboutMe && aboutMe.images ? <img src={aboutMe.images[0]} alt="Me" /> : null;
+
+  const education =
+    aboutMe && aboutMe.education
+      ? aboutMe.education.map(edu => {
+          return (
+            <div key={edu.from} className="education">
+              <h3>{edu.school}</h3>
+              <h4>{edu.degree}</h4>
+              <h5 className="moment">
+                <Moment format="MMM Do, YYYY">{edu.from}</Moment>
+                <span> to </span>
+                <Moment format="MMM Do, YYYY">{edu.to}</Moment>
+              </h5>
+            </div>
+          );
+        })
+      : null;
+
+  const images =
+    aboutMe && aboutMe.images
+      ? aboutMe.images.map((image, i) => <img key={i} src={image} alt="Me" />)
+      : null;
+
   return aboutMe ? (
     <div className="Profile">
+      <h1>{<aboutMe.icon />}</h1>
       <h1>{aboutMe.name}</h1>
+      {firstImage}
       {links}
+      {education}
+      {about}
     </div>
   ) : (
     <div className="Profile">Loading...</div>

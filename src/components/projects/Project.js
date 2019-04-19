@@ -6,7 +6,8 @@ import "../../scss/Project.scss";
 
 const Project = ({ location }) => {
   useEffect(() => {
-    document.title = project.name;
+    document.title =
+      project && project.name ? project.name : "Nothing To See Here";
   });
 
   const projectName =
@@ -54,8 +55,8 @@ const Project = ({ location }) => {
   const images =
     project &&
     project.images &&
-    project.images.map((img, index) => {
-      return <img key={index} src={img} alt="project" />;
+    project.images.map((img, i) => {
+      return <img key={i} src={img} alt="project" />;
     });
 
   return project ? (
@@ -67,7 +68,11 @@ const Project = ({ location }) => {
       <div>{images}</div>
     </div>
   ) : (
-    <div className="Project">No Project with that name</div>
+    <div className="Project">
+      <h1>No project with that name</h1>
+      <h2>But just look at how that footer stays at the bottom!</h2>
+      <h2>Pretty sweet, Eh?</h2>
+    </div>
   );
 };
 export default Project;

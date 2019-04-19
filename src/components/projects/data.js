@@ -1,4 +1,5 @@
 // Get SVG icons for tech
+import mikeBrucker from "../../images/mike-brucker.jpeg";
 import blog0 from "../../images/blog0.png";
 import blog1 from "../../images/blog1.png";
 import blobMan from "../../images/blob-man.png";
@@ -11,23 +12,53 @@ import rostered3 from "../../images/rostered3.png";
 import rostered4 from "../../images/rostered4.png";
 import rostered5 from "../../images/rostered5.png";
 import bruckerboard1 from "../../images/bruckerboard1.png";
+import portfolio0 from "../../images/portfolio0.png";
+import portfolio1 from "../../images/portfolio1.png";
+import portfolio2 from "../../images/portfolio2.png";
 import {
   FaHockeyPuck,
   FaBookDead,
   FaGithub,
   FaLinkedin,
-  FaDragon
+  FaDragon,
+  FaUser
 } from "react-icons/fa";
 import {
   GiCartwheel,
   GiTransparentSlime,
   GiOctopus,
-  GiHornedHelm
+  GiHeavyHelm
 } from "react-icons/gi";
 
+// Data to display on my profile
 export const aboutMe = {
   name: "Mike Brucker",
-  icon: GiHornedHelm,
+  icon: GiHeavyHelm,
+  skills: [
+    "HTML/CSS",
+    "Sass/Less",
+    "JavaScript",
+    "jQuery",
+    "ES6",
+    "React",
+    "Redux",
+    "Firebase",
+    "Firestore",
+    "Ruby",
+    "Ruby on Rails",
+    "MongoDB",
+    "NodeJS",
+    "Express",
+    "Git",
+    "Heroku",
+    "Phaser3",
+    "Tiled"
+  ],
+  about: [
+    "I am a web developer from Philadelphia. I've been focused mostly on React since I finished school but am starting to learn Python now. This portfolio site is even built on React!",
+    "I am an excellent problem solver. I love nothing more than a good challenge or puzzle to tackle. I approach coding the same way I approach playing hockey, cooking, or any task I need to do. I clean things up as I progress, stay focused no matter the situation, and try to make each action as efficient as possible.",
+    "I have changed my career a few times to find my passion and it hasn't worked out until now. Writing code feels like I am composing a symphony. Building an app feels like I am architecting a skyscraper. It's the perfect combination of what I've been looking for in previous careers. I am truly enthusastic about writing code. I am excited to bring my passion into an environment with other passionate coders."
+  ],
   links: [
     {
       name: "Github",
@@ -38,10 +69,31 @@ export const aboutMe = {
       name: "LinkedIn",
       link: "https://linkedin.com/in/mike-brucker",
       icon: FaLinkedin
+    },
+    {
+      name: "Portfolio",
+      link: "https://mikebrucker.com",
+      icon: GiHeavyHelm
     }
-  ]
+  ],
+  education: [
+    {
+      school: "New York Code and Design Academy",
+      degree: "Certification of Web Development",
+      from: "2018-07-23",
+      to: "2018-10-17"
+    },
+    {
+      school: "Temple University",
+      degree: "Bachelor of Arts in Media Studies and Production",
+      from: "2011-08-23",
+      to: "2015-12-15"
+    }
+  ],
+  images: [mikeBrucker]
 };
 
+// Data for my projects
 export const projects = [
   {
     id: "1",
@@ -138,5 +190,19 @@ export const projects = [
       "Blog written in Ruby on Rails. This application maintains a database of Users, Posts, and Comments. Features full CRUD functionality. With JavaScript, Users can edit their comments inline without redirecting to a new page."
     ],
     images: [blog0, blog1]
+  },
+  {
+    id: "7",
+    name: "Portfolio",
+    icon: FaUser,
+    links: {
+      live: "https://mikebrucker.com",
+      repo: "https://github.com/mikebrucker/Portfolio"
+    },
+    tech: ["React"],
+    detail: [
+      "This is my portfolio site that you are looking at already. Is this recursive or redundant?"
+    ],
+    images: [portfolio0, portfolio1, portfolio2]
   }
 ];
