@@ -3,7 +3,7 @@ import { projects } from "../../data";
 import { FaGithub } from "react-icons/fa";
 import Button from "@material-ui/core/Button";
 import "../../scss/Project.scss";
-import ProjectSkills from "./ProjectSkills";
+import Skills from "../profile/Skills";
 
 const Project = ({ location }) => {
   useEffect(() => {
@@ -64,7 +64,7 @@ const Project = ({ location }) => {
     <div className="Project">
       <h1>{project.name}</h1>
       <h3>Built with {techStack}</h3>
-      <ProjectSkills skills={project.tech} />
+      <Skills skills={project.tech} />
       {links}
       <div>{detail}</div>
       <div>{images}</div>

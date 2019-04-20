@@ -32,6 +32,7 @@ import firebase from "./images/firebase.svg";
 import phas3r from "./images/phas3r.svg";
 import redux from "./images/redux.svg";
 import gimp from "./images/gimp.svg";
+import tiled from "./images/tiled.svg";
 import materialui from "./images/materialui.svg";
 import nycda from "./images/nycda.svg";
 import temple from "./images/temple.svg";
@@ -59,6 +60,26 @@ export const aboutMe = {
   type: "Profile",
   icon: GiHeavyHelm,
   skills: [
+    "JavaScript",
+    "React",
+    "Redux",
+    "jQuery",
+    "HTML",
+    "CSS",
+    "Sass",
+    "Ruby",
+    "Rails",
+    "NodeJS",
+    "MongoDB",
+    "Express",
+    "Firebase",
+    "Material-UI",
+    "Git",
+    "Heroku",
+    "Phaser3",
+    "Gimp"
+  ],
+  tech: [
     { name: "JavaScript", icon: "devicon devicon-javascript-plain colored" },
     { name: "React", icon: "devicon devicon-react-original colored" },
     { name: "Redux", icon: redux },
@@ -68,6 +89,8 @@ export const aboutMe = {
     { name: "Sass", icon: "devicon devicon-sass-original colored" },
     { name: "Ruby", icon: "devicon devicon-ruby-plain-wordmark colored" },
     { name: "Rails", icon: "devicon devicon-rails-plain-wordmark colored" },
+    { name: "PostgreSQL", icon: "devicon devicon-postgresql-plain colored" },
+    { name: "Webpack", icon: "devicon devicon-webpack-plain colored" },
     { name: "NodeJS", icon: "devicon devicon-nodejs-plain colored" },
     { name: "MongoDB", icon: "devicon devicon-mongodb-plain-wordmark colored" },
     {
@@ -82,7 +105,8 @@ export const aboutMe = {
       icon: "devicon devicon-heroku-original-wordmark colored"
     },
     { name: "Phaser3", icon: phas3r },
-    { name: "Gimp", icon: gimp }
+    { name: "Gimp", icon: gimp },
+    { name: "Tiled", icon: tiled }
   ],
   about: [
     "I am a web developer from Philadelphia. I've been focused mostly on React since I finished school but am starting to learn Python now. This portfolio site is even built on React!",
@@ -227,7 +251,7 @@ export const projects = [
       live: "https://blog-in-gray.herokuapp.com",
       repo: "https://github.com/mikebrucker/Rails-Blog"
     },
-    tech: ["Ruby", "Rails", "Ruby on Rails", "Postgres", "SQLite3"],
+    tech: ["Ruby", "Rails", "PostgreSQL", "SQLite3"],
     detail: [
       "Blog written in Ruby on Rails. This application maintains a database of Users, Posts, and Comments. Features full CRUD functionality. With JavaScript, Users can edit their comments inline without redirecting to a new page."
     ],

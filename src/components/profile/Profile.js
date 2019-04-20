@@ -71,7 +71,7 @@ const Profile = () => {
       {firstImage}
       {links}
       {about}
-      <Skills aboutMe={aboutMe} />
+      <Skills skills={aboutMe.skills} />
       {education}
     </div>
   ) : (

@@ -22,7 +22,7 @@ const ProfileSummary = ({ scrollToTopOfPage }) => {
             alt="Me"
           />
           <div className="profile-summary-skills">
-            <Skills aboutMe={aboutMe} />
+            <Skills skills={aboutMe.skills} />
           </div>
         </div>
       </Link>
