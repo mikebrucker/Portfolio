@@ -1,0 +1,19 @@
+.ProfileSummary {
+  background-color: #0097a7;
+  background-image: linear-gradient(#0097a7, antiquewhite);
+  padding: 20px 0;
+  position: relative;
+
+  .profile-summary-skills {
+    margin-top: -4em;
+  }
+  .profile-summary-image {
+    border-radius: 100vw;
+    display: block;
+    width: 100%;
+    max-width: 240px;
+    margin: 0px auto;
+    border: 4px solid antiquewhite;
+    box-shadow: 1px 5px 10px #212121, -1px 5px 10px #212121;
+  }
+}

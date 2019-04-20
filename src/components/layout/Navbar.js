@@ -7,7 +7,6 @@ import MenuIcon from "@material-ui/icons/Menu";
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import ListSubheader from "@material-ui/core/ListSubheader";
 import { projects, aboutMe } from "../projects/data";
 
 const styles = theme => ({
@@ -18,6 +17,9 @@ const styles = theme => ({
     "&:hover": {
       color: "antiquewhite"
     }
+  },
+  background: {
+    backgroundColor: "#00e5ff"
   },
   openDrawer: {
     backgroundColor: "#00e5ff",
@@ -32,7 +34,10 @@ const styles = theme => ({
     }
   },
   listSubHeader: {
-    borderBottom: "1px solid #424242"
+    borderBottom: "1px solid #424242",
+    padding: "20px 0 6px 36px",
+    textAlign: "left",
+    margin: "0 auto"
   },
   title: {
     fontSize: "3vw",
@@ -112,10 +117,8 @@ class Navbar extends Component {
 
     // sideMenu has Projects listed and My personal links listed
     const sideMenu = (
-      <List>
-        <ListSubheader className={classes.listSubHeader}>
-          Projects
-        </ListSubheader>
+      <List className={classes.background}>
+        <h6 className={classes.listSubHeader}>Projects</h6>
         {projects &&
           projects.map(project => {
             const projectIcon = project.icon ? <project.icon /> : null;
@@ -133,9 +136,7 @@ class Navbar extends Component {
               </Link>
             );
           })}
-        <ListSubheader className={classes.listSubHeader}>
-          Portfolio
-        </ListSubheader>
+        <h6 className={classes.listSubHeader}>Personal</h6>
         <RouterLink to="/profile" color="secondary" underline="none">
           <ListItem button>
             {aboutMe && aboutMe.icon ? <aboutMe.icon /> : null}

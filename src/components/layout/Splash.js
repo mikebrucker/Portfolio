@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "../../scss/Splash.scss";
 import mikeskydivegif from "../../images/mikeskydive.gif";
 import Projects from "../projects/Projects";
+import ProfileSummary from "../profile/ProfileSummary";
 
 const Splash = ({ scrollToTopOfPage }) => {
   // Going with just the gif for now instead of the long youtube video which would only display on desktop.
@@ -45,6 +46,7 @@ const Splash = ({ scrollToTopOfPage }) => {
           </div>
         </div>
       ) : null}
+      <ProfileSummary scrollToTopOfPage={scrollToTopOfPage} />
       <Projects scrollToTopOfPage={scrollToTopOfPage} />
     </main>
   );

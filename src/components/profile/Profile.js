@@ -3,6 +3,7 @@ import { aboutMe } from "../projects/data";
 import Button from "@material-ui/core/Button";
 import Moment from "react-moment";
 import "../../scss/Profile.scss";
+import Skills from "./Skills";
 
 const Profile = () => {
   useEffect(() => {
@@ -59,9 +60,10 @@ const Profile = () => {
 
   return aboutMe ? (
     <div className="Profile">
-      <h1>{<aboutMe.icon />}</h1>
+      {<aboutMe.icon className="profile-icon" />}
       <h1>{aboutMe.name}</h1>
       {firstImage}
+      <Skills aboutMe={aboutMe} />
       {links}
       {education}
       {about}

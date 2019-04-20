@@ -1,28 +1,38 @@
 // Get SVG icons for tech
-import mikeBrucker from "../../images/mike-brucker.jpeg";
-import blog0 from "../../images/blog0.png";
-import blog1 from "../../images/blog1.png";
-import blobMan from "../../images/blob-man.png";
-import towerDefense from "../../images/tower-defense.png";
-import wheelOfJavascript from "../../images/wheel-of-javascript.png";
 import rostered0 from "../../images/rostered0.png";
 import rostered1 from "../../images/rostered1.png";
 import rostered2 from "../../images/rostered2.png";
 import rostered3 from "../../images/rostered3.png";
 import rostered4 from "../../images/rostered4.png";
 import rostered5 from "../../images/rostered5.png";
+
 import bruckerboard1 from "../../images/bruckerboard1.png";
+
+import mikeBrucker from "../../images/mike-brucker.jpeg";
+
+import wheelOfJavascript from "../../images/wheel-of-javascript.png";
+
+import blobMan from "../../images/blob-man.png";
+
+import towerDefense from "../../images/tower-defense.png";
+
+import blog0 from "../../images/blog0.png";
+import blog1 from "../../images/blog1.png";
+
 import portfolio0 from "../../images/portfolio0.png";
 import portfolio1 from "../../images/portfolio1.png";
 import portfolio2 from "../../images/portfolio2.png";
+
 import {
   FaHockeyPuck,
   FaBookDead,
   FaGithub,
   FaLinkedin,
   FaDragon,
-  FaUser
+  FaRegEnvelope,
+  FaRegUser
 } from "react-icons/fa";
+
 import {
   GiCartwheel,
   GiTransparentSlime,
@@ -30,29 +40,41 @@ import {
   GiHeavyHelm
 } from "react-icons/gi";
 
+import firebase from "../../images/firebase.svg";
+import phas3r from "../../images/phas3r.svg";
+import redux from "../../images/redux.svg";
+import tiled from "../../images/tiled.svg";
+import gimp from "../../images/gimp.svg";
+
 // Data to display on my profile
 export const aboutMe = {
   name: "Mike Brucker",
   icon: GiHeavyHelm,
   skills: [
-    "HTML/CSS",
-    "Sass/Less",
-    "JavaScript",
-    "jQuery",
-    "ES6",
-    "React",
-    "Redux",
-    "Firebase",
-    "Firestore",
-    "Ruby",
-    "Ruby on Rails",
-    "MongoDB",
-    "NodeJS",
-    "Express",
-    "Git",
-    "Heroku",
-    "Phaser3",
-    "Tiled"
+    { name: "JavaScript", icon: "devicon devicon-javascript-plain colored" },
+    { name: "React", icon: "devicon devicon-react-original colored" },
+    { name: "Redux", icon: redux },
+    { name: "jQuery", icon: "devicon devicon-jquery-plain-wordmark colored" },
+    { name: "HTML", icon: "devicon devicon-html5-plain-wordmark colored" },
+    { name: "CSS", icon: "devicon devicon-css3-plain-wordmark colored" },
+    { name: "Sass/Less", icon: "devicon devicon-sass-original colored" },
+    { name: "Ruby", icon: "devicon devicon-ruby-plain-wordmark colored" },
+    { name: "Rails", icon: "devicon devicon-rails-plain-wordmark colored" },
+    { name: "NodeJS", icon: "devicon devicon-nodejs-plain colored" },
+    { name: "MongoDB", icon: "devicon devicon-mongodb-plain-wordmark colored" },
+    {
+      name: "Express",
+      icon: "devicon devicon-express-original-wordmark colored"
+    },
+    { name: "Firebase", icon: firebase },
+    { name: "Git", icon: "devicon devicon-git-plain-wordmark colored" },
+    {
+      name: "Heroku",
+      icon: "devicon devicon-heroku-original-wordmark colored"
+    },
+    { name: "Phaser3", icon: phas3r },
+    { name: "Tiled", icon: tiled },
+    { name: "Gimp", icon: gimp }
   ],
   about: [
     "I am a web developer from Philadelphia. I've been focused mostly on React since I finished school but am starting to learn Python now. This portfolio site is even built on React!",
@@ -71,9 +93,9 @@ export const aboutMe = {
       icon: FaLinkedin
     },
     {
-      name: "Portfolio",
-      link: "https://mikebrucker.com",
-      icon: GiHeavyHelm
+      name: "Email",
+      link: "mailto:michael.w.brucker@gmail.com",
+      icon: FaRegEnvelope
     }
   ],
   education: [
@@ -202,7 +224,7 @@ export const projects = [
   {
     id: "7",
     name: "Portfolio",
-    icon: FaUser,
+    icon: FaRegUser,
     links: {
       live: "https://mikebrucker.com",
       repo: "https://github.com/mikebrucker/Portfolio"
