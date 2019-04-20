@@ -45,6 +45,8 @@ import phas3r from "../../images/phas3r.svg";
 import redux from "../../images/redux.svg";
 import tiled from "../../images/tiled.svg";
 import gimp from "../../images/gimp.svg";
+import nycda from "../../images/nycda.svg";
+import temple from "../../images/temple.svg";
 
 // Data to display on my profile
 export const aboutMe = {
@@ -103,13 +105,17 @@ export const aboutMe = {
       school: "New York Code and Design Academy",
       degree: "Certificate of Web Development",
       from: "2018-07-23",
-      to: "2018-10-17"
+      to: "2018-10-17",
+      class: "nycda",
+      icon: nycda
     },
     {
       school: "Temple University",
       degree: "Bachelor of Arts in Media Studies and Production",
       from: "2011-08-23",
-      to: "2015-12-15"
+      to: "2015-12-15",
+      class: "temple",
+      icon: temple
     }
   ],
   images: [mikeBrucker]

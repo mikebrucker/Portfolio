@@ -2,8 +2,9 @@ import React, { useEffect } from "react";
 import { aboutMe } from "../projects/data";
 import Button from "@material-ui/core/Button";
 import Moment from "react-moment";
-import "../../scss/Profile.scss";
+import ReactSVG from "react-svg";
 import Skills from "./Skills";
+import "../../scss/Profile.scss";
 
 const Profile = () => {
   useEffect(() => {
@@ -41,7 +42,10 @@ const Profile = () => {
       ? aboutMe.education.map(edu => {
           return (
             <div key={edu.from} className="education">
-              <h3>{edu.school}</h3>
+              <h3 className={`edu-icon ${edu.class}`}>
+                <ReactSVG src={edu.icon} />
+                {edu.school}
+              </h3>
               <h4>{edu.degree}</h4>
               <h5 className="moment">
                 <Moment format="MMM Do, YYYY">{edu.from}</Moment>
