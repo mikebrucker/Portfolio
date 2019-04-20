@@ -22,7 +22,7 @@ const ProjectSummary = ({ project, scrollToTopOfPage }) => {
         component={RouterLink}
         underline="none"
         onClick={scrollToTopOfPage}
-        to={`/${project.name}`}
+        to={`/${project.name.replace(/\s/g, "")}`}
       >
         <div className="ProjectSummary">
           <h1>{project.name}</h1>

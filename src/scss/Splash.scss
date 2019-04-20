@@ -24,7 +24,7 @@ $secondary-font-light: #eceff1;
   }
 
   .splash-text {
-    font-size: 10vw;
+    font-size: 8vw;
     font-weight: bolder;
     color: #00bcd4;
     text-shadow: -5px -5px 10px #263238, 5px -5px 10px #263238,
@@ -34,13 +34,13 @@ $secondary-font-light: #eceff1;
 
   .splash-text-first {
     // max-width: 756px;
-    animation: text1 infinite 15s ease-in-out;
+    animation: text1 infinite 30s ease-in-out;
   }
   .splash-text-second {
-    animation: text2 infinite 15s ease-in-out;
+    animation: text2 infinite 30s ease-in-out;
   }
   .splash-text-third {
-    animation: text3 infinite 15s ease-in-out;
+    animation: text3 infinite 30s ease-in-out;
   }
 
   img {
@@ -70,38 +70,37 @@ $secondary-font-light: #eceff1;
 
 @keyframes text1 {
   0%,
-  28%,
+  33%,
   100% {
-    opacity: 1;
-  }
-  30.5%,
-  97.5% {
     opacity: 0;
+  }
+  28%,
+  5% {
+    opacity: 1;
   }
 }
 
 @keyframes text2 {
-  33%,
-  61% {
-    opacity: 1;
-  }
   0%,
-  30.5%,
-  63.5%,
+  33%,
+  66%,
   100% {
     opacity: 0;
+  }
+  38%,
+  61% {
+    opacity: 1;
   }
 }
 
 @keyframes text3 {
-  66%,
-  93.5% {
-    opacity: 1;
-  }
   0%,
-  63.5%,
-  95.5%,
+  66%,
   100% {
     opacity: 0;
+  }
+  71%,
+  95% {
+    opacity: 1;
   }
 }

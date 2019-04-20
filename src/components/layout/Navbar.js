@@ -7,7 +7,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import { projects, aboutMe } from "../projects/data";
+import { projects, aboutMe } from "../../data";
 
 const styles = theme => ({
   center: {
@@ -77,6 +77,8 @@ class Navbar extends Component {
   render() {
     const { classes } = this.props;
 
+    // navMenu is all the links with just icons to be shown in nav when browser is 960px width or bigger
+    // Projects, Profile, External Links
     const navMenu = (
       <div className={classes.navMenu}>
         {projects &&
@@ -88,7 +90,7 @@ class Navbar extends Component {
               <Link
                 className={classes.navMenuLink}
                 key={project.id}
-                to={`/${project.name}`}
+                to={`/${project.name.replace(/\s/g, "")}`}
                 component={RouterLink}
                 color="secondary"
                 underline="none"
@@ -99,9 +101,10 @@ class Navbar extends Component {
               </Link>
             );
           })}
+
         <Link
           className={classes.navMenuLink}
-          to="/profile"
+          to={`/${aboutMe.type.replace(/\s/g, "")}`}
           component={RouterLink}
           color="secondary"
           underline="none"
@@ -112,10 +115,34 @@ class Navbar extends Component {
             ) : null}
           </IconButton>
         </Link>
+
+        {aboutMe &&
+          aboutMe.links &&
+          aboutMe.links.map(about => {
+            const aboutMeIcon = about.icon ? (
+              <about.icon className={classes.navMenuSVG} />
+            ) : null;
+            return (
+              <Link
+                className={classes.navMenuLink}
+                key={about.name}
+                href={about.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                color="secondary"
+                underline="none"
+              >
+                <IconButton className={classes.navMenuLink} color="secondary">
+                  {aboutMeIcon}
+                </IconButton>
+              </Link>
+            );
+          })}
       </div>
     );
 
-    // sideMenu has Projects listed and My personal links listed
+    // sideMenu is all the links with names to pop over the screen on the right when menu button is clicked
+    // Projects, Profile, External Links
     const sideMenu = (
       <List className={classes.background}>
         <h6 className={classes.listSubHeader}>Projects</h6>
@@ -125,7 +152,7 @@ class Navbar extends Component {
             return (
               <Link
                 key={project.id}
-                to={`/${project.name}`}
+                to={`/${project.name.replace(/\s/g, "")}`}
                 component={RouterLink}
                 color="secondary"
                 underline="none"
@@ -136,14 +163,20 @@ class Navbar extends Component {
               </Link>
             );
           })}
+
         <h6 className={classes.listSubHeader}>Personal</h6>
-        <RouterLink to="/profile" color="secondary" underline="none">
+        <RouterLink
+          to={`/${aboutMe.type.replace(/\s/g, "")}`}
+          color="secondary"
+          underline="none"
+        >
           <ListItem button>
             {aboutMe && aboutMe.icon ? <aboutMe.icon /> : null}
             &nbsp;
-            {aboutMe && aboutMe.name ? aboutMe.name : null}
+            {aboutMe && aboutMe.type ? aboutMe.type : null}
           </ListItem>
         </RouterLink>
+
         {aboutMe &&
           aboutMe.links &&
           aboutMe.links.map(link => {

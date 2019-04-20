@@ -1,27 +1,40 @@
 // Get SVG icons for tech
-import rostered0 from "../../images/rostered0.png";
-import rostered1 from "../../images/rostered1.png";
-import rostered2 from "../../images/rostered2.png";
-import rostered3 from "../../images/rostered3.png";
-import rostered4 from "../../images/rostered4.png";
-import rostered5 from "../../images/rostered5.png";
+import rostered0 from "./images/rostered0.png";
+import rostered1 from "./images/rostered1.png";
+import rostered2 from "./images/rostered2.png";
+import rostered3 from "./images/rostered3.png";
+import rostered4 from "./images/rostered4.png";
+import rostered5 from "./images/rostered5.png";
 
-import bruckerboard1 from "../../images/bruckerboard1.png";
+import bruckerBoard0 from "./images/brucker-board0.png";
+import bruckerBoard1 from "./images/brucker-board1.png";
 
-import mikeBrucker from "../../images/mike-brucker.jpeg";
+import mikeBrucker from "./images/mike-brucker.jpeg";
 
-import wheelOfJavascript from "../../images/wheel-of-javascript.png";
+import wheelOfJavascript0 from "./images/wheel-of-javascript0.png";
+import wheelOfJavascript1 from "./images/wheel-of-javascript1.png";
+import wheelOfJavascript2 from "./images/wheel-of-javascript2.png";
 
-import blobMan from "../../images/blob-man.png";
+import blobMan0 from "./images/blob-man0.png";
+import blobMan1 from "./images/blob-man1.png";
+import blobMan2 from "./images/blob-man2.png";
 
-import towerDefense from "../../images/tower-defense.png";
+import towerDefense from "./images/tower-defense.png";
 
-import blog0 from "../../images/blog0.png";
-import blog1 from "../../images/blog1.png";
+import blog0 from "./images/blog0.png";
+import blog1 from "./images/blog1.png";
 
-import portfolio0 from "../../images/portfolio0.png";
-import portfolio1 from "../../images/portfolio1.png";
-import portfolio2 from "../../images/portfolio2.png";
+import portfolio0 from "./images/portfolio0.png";
+import portfolio1 from "./images/portfolio1.png";
+import portfolio2 from "./images/portfolio2.png";
+
+import firebase from "./images/firebase.svg";
+import phas3r from "./images/phas3r.svg";
+import redux from "./images/redux.svg";
+import tiled from "./images/tiled.svg";
+import gimp from "./images/gimp.svg";
+import nycda from "./images/nycda.svg";
+import temple from "./images/temple.svg";
 
 import {
   FaHockeyPuck,
@@ -40,17 +53,10 @@ import {
   GiHeavyHelm
 } from "react-icons/gi";
 
-import firebase from "../../images/firebase.svg";
-import phas3r from "../../images/phas3r.svg";
-import redux from "../../images/redux.svg";
-import tiled from "../../images/tiled.svg";
-import gimp from "../../images/gimp.svg";
-import nycda from "../../images/nycda.svg";
-import temple from "../../images/temple.svg";
-
 // Data to display on my profile
 export const aboutMe = {
   name: "Mike Brucker",
+  type: "Profile",
   icon: GiHeavyHelm,
   skills: [
     { name: "JavaScript", icon: "devicon devicon-javascript-plain colored" },
@@ -151,7 +157,7 @@ export const projects = [
       "This is a ToDo board like a Trello board. Keep track of ToDos in columns of Backlog, ToDo, InProgress, Completed. Each ToDo can be removed and has a priority of low, medium, or high, which is indicated by it's border color. ToDo's also have a timestamp of when it was created. Arrow buttons can move the ToDo into the next or previous column.",
       "Each action to add, remove, or move a ToDo will store the state of the board in localStorage to keep track on each site visit or refresh."
     ],
-    images: [bruckerboard1]
+    images: [bruckerBoard0, bruckerBoard1]
   },
   {
     id: "3",
@@ -171,7 +177,7 @@ export const projects = [
       "Win 10 games to win your total bank.",
       "If you guess a wrong letter 10 times you lose."
     ],
-    images: [wheelOfJavascript]
+    images: [wheelOfJavascript0, wheelOfJavascript1, wheelOfJavascript2]
   },
   {
     id: "4",
@@ -190,7 +196,7 @@ export const projects = [
       "Skeletons increase in speed every level.",
       "Your scores are added to the bottom of the page after every game. They will disappear when you close down the page."
     ],
-    images: [blobMan]
+    images: [blobMan0, blobMan1, blobMan2]
   },
   {
     id: "5",
@@ -229,7 +235,7 @@ export const projects = [
   },
   {
     id: "7",
-    name: "Portfolio",
+    name: "Portfolio Site",
     icon: FaRegUser,
     links: {
       live: "https://mikebrucker.com",

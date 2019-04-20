@@ -7,6 +7,7 @@
   .profile-summary-skills {
     margin-top: -4em;
   }
+
   .profile-summary-image {
     border-radius: 100vw;
     display: block;
@@ -14,6 +15,7 @@
     max-width: 240px;
     margin: 0px auto;
     border: 4px solid antiquewhite;
-    box-shadow: 1px 5px 10px #212121, -1px 5px 10px #212121;
+    box-shadow: 3px 8px 10px #424242, -3px 8px 10px #424242,
+      -1px -1px 10px #424242, -1px -1px 10px #424242;
   }
 }

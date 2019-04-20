@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../../images/logo.svg";
 import "../../scss/ReactLogo.scss";
+
 const ReactLogo = () => {
   return (
     <header className="ReactLogo">

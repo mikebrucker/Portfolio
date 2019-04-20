@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { projects } from "./data";
+import { projects } from "../../data";
 import { FaGithub } from "react-icons/fa";
 import Button from "@material-ui/core/Button";
 import "../../scss/Project.scss";
@@ -14,7 +14,7 @@ const Project = ({ location }) => {
     location && location.pathname ? location.pathname.substring(1) : null;
 
   const project = projectName
-    ? projects.filter(proj => proj.name === projectName)[0]
+    ? projects.filter(proj => proj.name.replace(/\s/g, "") === projectName)[0]
     : null;
 
   const projectIcon = project && project.icon ? <project.icon /> : null;

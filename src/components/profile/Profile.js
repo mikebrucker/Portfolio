@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { aboutMe } from "../projects/data";
+import { aboutMe } from "../../data";
 import Button from "@material-ui/core/Button";
 import Moment from "react-moment";
 import ReactSVG from "react-svg";
@@ -8,7 +8,7 @@ import "../../scss/Profile.scss";
 
 const Profile = () => {
   useEffect(() => {
-    document.title = aboutMe.name;
+    document.title = aboutMe.type;
   });
 
   const links =
@@ -35,7 +35,9 @@ const Profile = () => {
       : null;
 
   const firstImage =
-    aboutMe && aboutMe.images ? <img src={aboutMe.images[0]} alt="Me" /> : null;
+    aboutMe && aboutMe.images ? (
+      <img className="profile-image" src={aboutMe.images[0]} alt="Me" />
+    ) : null;
 
   const education =
     aboutMe && aboutMe.education
@@ -57,20 +59,20 @@ const Profile = () => {
         })
       : null;
 
-  const images =
-    aboutMe && aboutMe.images
-      ? aboutMe.images.map((image, i) => <img key={i} src={image} alt="Me" />)
-      : null;
+  // const images =
+  //   aboutMe && aboutMe.images
+  //     ? aboutMe.images.map((image, i) => <img key={i} src={image} alt="Me" />)
+  //     : null;
 
   return aboutMe ? (
     <div className="Profile">
       {<aboutMe.icon className="profile-icon" />}
       <h1>{aboutMe.name}</h1>
       {firstImage}
-      <Skills aboutMe={aboutMe} />
       {links}
-      {education}
       {about}
+      <Skills aboutMe={aboutMe} />
+      {education}
     </div>
   ) : (
     <div className="Profile">Loading...</div>

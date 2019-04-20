@@ -5,7 +5,7 @@ import { withStyles } from "@material-ui/core/styles";
 import { FaReact } from "react-icons/fa";
 import "../../scss/Footer.scss";
 import Link from "@material-ui/core/Link";
-import { aboutMe } from "../projects/data";
+import { aboutMe } from "../../data";
 
 const styles = theme => ({
   root: {
