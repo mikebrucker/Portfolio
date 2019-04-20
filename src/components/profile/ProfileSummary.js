@@ -13,7 +13,7 @@ const ProfileSummary = ({ scrollToTopOfPage }) => {
         component={RouterLink}
         underline="none"
         onClick={scrollToTopOfPage}
-        to={"/profile"}
+        to={`/${aboutMe.type.replace(/\s/g, "")}`}
       >
         <div className="ProfileSummary">
           <img

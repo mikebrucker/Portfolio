@@ -7,7 +7,7 @@ const Skills = ({ aboutMe }) => {
     aboutMe && aboutMe.skills
       ? aboutMe.skills.map(skill => {
           return (
-            <div key={skill.name} className="profile-skill">
+            <div key={skill.name} className="display-skill">
               {skill.icon.charAt(0) === "/" ? (
                 <ReactSVG src={skill.icon} />
               ) : (

@@ -31,8 +31,8 @@ import portfolio2 from "./images/portfolio2.png";
 import firebase from "./images/firebase.svg";
 import phas3r from "./images/phas3r.svg";
 import redux from "./images/redux.svg";
-import tiled from "./images/tiled.svg";
 import gimp from "./images/gimp.svg";
+import materialui from "./images/materialui.svg";
 import nycda from "./images/nycda.svg";
 import temple from "./images/temple.svg";
 
@@ -65,7 +65,7 @@ export const aboutMe = {
     { name: "jQuery", icon: "devicon devicon-jquery-plain-wordmark colored" },
     { name: "HTML", icon: "devicon devicon-html5-plain-wordmark colored" },
     { name: "CSS", icon: "devicon devicon-css3-plain-wordmark colored" },
-    { name: "Sass/Less", icon: "devicon devicon-sass-original colored" },
+    { name: "Sass", icon: "devicon devicon-sass-original colored" },
     { name: "Ruby", icon: "devicon devicon-ruby-plain-wordmark colored" },
     { name: "Rails", icon: "devicon devicon-rails-plain-wordmark colored" },
     { name: "NodeJS", icon: "devicon devicon-nodejs-plain colored" },
@@ -75,13 +75,13 @@ export const aboutMe = {
       icon: "devicon devicon-express-original-wordmark colored"
     },
     { name: "Firebase", icon: firebase },
+    { name: "Material-UI", icon: materialui },
     { name: "Git", icon: "devicon devicon-git-plain-wordmark colored" },
     {
       name: "Heroku",
       icon: "devicon devicon-heroku-original-wordmark colored"
     },
     { name: "Phaser3", icon: phas3r },
-    { name: "Tiled", icon: tiled },
     { name: "Gimp", icon: gimp }
   ],
   about: [
@@ -137,7 +137,7 @@ export const projects = [
       live: "https://rostered-mwb.firebaseapp.com",
       repo: "https://github.com/mikebrucker/Rostered"
     },
-    tech: ["React", "Redux", "Firebase/Firestore"],
+    tech: ["React", "Redux", "Firebase", "Firestore"],
     detail: [
       "Rostered is an app which features full CRUD functionality that I built to keep track of all of the hockey teams I play on, including the players, games, and schedules. It is written in React, utilizes Redux for state managemant, and uses Google Firebase's data storage Firestore for the back-end. This single page app nests many components to add, edit, and delete each piece of data. Each component is initially hidden until you click the corresponding button.",
       "A server side function is run when teams are created to add its own id to a key: 'value' pair, teamId: XXXXXX. This is necessary for other components to display and update the correct team data."
@@ -152,7 +152,7 @@ export const projects = [
       live: "https://bruckerboard.firebaseapp.com",
       repo: "https://github.com/mikebrucker/BruckerBoard"
     },
-    tech: ["React"],
+    tech: ["React", "Sass"],
     detail: [
       "This is a ToDo board like a Trello board. Keep track of ToDos in columns of Backlog, ToDo, InProgress, Completed. Each ToDo can be removed and has a priority of low, medium, or high, which is indicated by it's border color. ToDo's also have a timestamp of when it was created. Arrow buttons can move the ToDo into the next or previous column.",
       "Each action to add, remove, or move a ToDo will store the state of the board in localStorage to keep track on each site visit or refresh."
@@ -167,7 +167,7 @@ export const projects = [
       live: "https://mikebrucker.github.io/Wheel-Of-Fortune/",
       repo: "https://github.com/mikebrucker/Wheel-Of-Fortune"
     },
-    tech: ["Javascript", "jQuery", "HTML/CSS"],
+    tech: ["JavaScript", "jQuery", "HTML", "CSS"],
     detail: [
       "This was my JavaScript Capstone project in school, the first 'big' JavaScript application I made. It can most definitely be improved but I would rather rebuild it instead. This was also the first time I ever used jQuery and I may have gotten a bit carried away with it :P. This project shows that I can learn at a very quick pace and build something that looks good and functions well.",
       "Event listeners listen for keyboard input but if you are on mobile you can click 'Guess Letter' to show a virtual keyboard",
@@ -187,7 +187,7 @@ export const projects = [
       live: "https://blob-man.mikebrucker.com",
       repo: "https://github.com/mikebrucker/Blob-Man"
     },
-    tech: ["Javascript", "Phaser3", "Webpack", "Tiled"],
+    tech: ["JavaScript", "Phaser3", "Webpack", "Tiled"],
     detail: [
       "The first game I built was just one level of this Pac-Man clone game for a group project. In my free time I expanded it into a full game. I learned Phaser3, a JS game engine library, and built this game (the first level) in a span of ten days. Since then I've fixed bugs, added pause for the game and sounds, and added a custom start option if you just want to challenge yourself with tons of skeletons coming after you.",
       "You play as Blob-Man and you must collect all his blob children to pass the level.",
@@ -206,7 +206,7 @@ export const projects = [
       live: "https://tower-defense.mikebrucker.com",
       repo: "https://github.com/mikebrucker/Tower-Defense"
     },
-    tech: ["Javascript", "Phaser3", "Webpack", "Tiled"],
+    tech: ["JavaScript", "Phaser3", "Webpack", "Tiled"],
     detail: [
       "The second game I made was my final project, a Tower Defense Game. There is a fixed path version and enemy finds it's own path version. I learned of Phaser3, a JS game engine library just weeks before making this, and built this with it.",
       "Enemies come in 30 waves of 20 units. Each tower built costs 1 resource and upgrades increase by 1 each upgrade. Towers will target the closest enemy and only be able to hit that enemy; the bullet will not be blocked by other units or bullets. Bullets can only damage their intended target and disappear upon contact or if the target no longer exists.",
@@ -241,7 +241,7 @@ export const projects = [
       live: "https://mikebrucker.com",
       repo: "https://github.com/mikebrucker/Portfolio"
     },
-    tech: ["React"],
+    tech: ["React", "Material-UI", "Sass"],
     detail: [
       "This is my portfolio site that you are looking at already. Is this recursive or redundant?"
     ],
