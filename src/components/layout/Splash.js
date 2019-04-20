@@ -4,7 +4,7 @@ import mikeskydivegif from "../../images/mikeskydive.gif";
 import Projects from "../projects/Projects";
 import ProfileSummary from "../profile/ProfileSummary";
 
-const Splash = ({ scrollToTopOfPage }) => {
+const Splash = ({ scrollToTopOfPage, scrollToProfileSummary }) => {
   // Going with just the gif for now instead of the long youtube video which would only display on desktop.
 
   // const splashVideo = navigator.userAgent.match(/Mobile|Android|iPhone/gi) ? (
@@ -27,7 +27,7 @@ const Splash = ({ scrollToTopOfPage }) => {
   return (
     <main className="Splash">
       {mikeskydivegif ? (
-        <div>
+        <div onClick={scrollToProfileSummary}>
           <img id="splashGif" src={mikeskydivegif} alt="Me Skydiving" />
           <div id="splashText" className="splash-text-container">
             <div className="splash-text-first splash-text">

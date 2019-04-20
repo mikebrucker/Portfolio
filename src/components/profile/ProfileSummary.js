@@ -7,7 +7,7 @@ import Skills from "./Skills";
 
 const ProfileSummary = ({ scrollToTopOfPage }) => {
   return aboutMe ? (
-    <div className="ProfileSummaryRoot">
+    <div id="topOfProfileSummary" className="ProfileSummaryRoot">
       <Link
         color="secondary"
         component={RouterLink}
@@ -28,7 +28,9 @@ const ProfileSummary = ({ scrollToTopOfPage }) => {
       </Link>
     </div>
   ) : (
-    <div className="ProfileSummary">Loading Profile...</div>
+    <div id="topOfProfileSummary" className="ProfileSummary">
+      Loading Profile...
+    </div>
   );
 };
 

@@ -14,7 +14,13 @@ class App extends Component {
   scrollToTopOfPage = () => {
     document.getElementById("topOfPage").scrollIntoView({
       behavior: "smooth",
-      block: "center",
+      inline: "center"
+    });
+  };
+
+  scrollToProfileSummary = () => {
+    document.getElementById("topOfProfileSummary").scrollIntoView({
+      behavior: "smooth",
       inline: "center"
     });
   };
@@ -30,7 +36,11 @@ class App extends Component {
               exact
               path="/"
               render={props => (
-                <Splash {...props} scrollToTopOfPage={this.scrollToTopOfPage} />
+                <Splash
+                  {...props}
+                  scrollToProfileSummary={this.scrollToProfileSummary}
+                  scrollToTopOfPage={this.scrollToTopOfPage}
+                />
               )}
             />
             <Route exact path="/spinninglogo" component={ReactLogo} />
