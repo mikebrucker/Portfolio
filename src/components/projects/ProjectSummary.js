@@ -3,6 +3,7 @@ import { Link as RouterLink } from "react-router-dom";
 import Link from "@material-ui/core/Link";
 import "../../scss/Projects.scss";
 
+// Shows just the project name, tech, and first picture
 const ProjectSummary = ({ project, scrollToTopOfPage }) => {
   const techStack =
     project &&
@@ -16,7 +17,7 @@ const ProjectSummary = ({ project, scrollToTopOfPage }) => {
     });
 
   return project ? (
-    <div className="ProjectSummaryRoot">
+    <section className="ProjectSummaryRoot">
       <Link
         color="secondary"
         component={RouterLink}
@@ -30,7 +31,7 @@ const ProjectSummary = ({ project, scrollToTopOfPage }) => {
           <img src={project.images[0]} alt="Project Screenshot" />
         </div>
       </Link>
-    </div>
+    </section>
   ) : (
     <div className="ProjectSummary">Loading Project...</div>
   );

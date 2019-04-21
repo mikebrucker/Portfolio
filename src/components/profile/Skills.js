@@ -4,19 +4,23 @@ import { aboutMe } from "../../data";
 import "../../scss/Skills.scss";
 
 const Skills = ({ skills }) => {
+  // takes an array of skills names to display the skill/tech icon
+  // if skill name is the same as tech.name
+  // it shows up as either an <i />(devicon) or <ReactSVG />(svg in images file)
   const displaySkills =
     skills && aboutMe && aboutMe.tech
       ? skills.map(skill => {
-          const aboutSkill = aboutMe.tech.filter(
-            aboutSkill => aboutSkill.name === skill
+          // matches input skill to tech on data list of tech
+          const displaySkill = aboutMe.tech.filter(
+            tech => tech.name === skill
           )[0];
 
-          return aboutSkill ? (
-            <div key={aboutSkill.name} className="display-skill">
-              {aboutSkill.icon.charAt(0) === "/" ? (
-                <ReactSVG src={aboutSkill.icon} />
+          return displaySkill ? (
+            <div key={displaySkill.name} className="display-skill">
+              {displaySkill.icon.charAt(0) === "/" ? (
+                <ReactSVG src={displaySkill.icon} />
               ) : (
-                <i className={aboutSkill.icon} />
+                <i className={displaySkill.icon} />
               )}
             </div>
           ) : null;

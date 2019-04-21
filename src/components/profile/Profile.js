@@ -1,40 +1,22 @@
 import React, { useEffect } from "react";
 import { aboutMe } from "../../data";
-import Button from "@material-ui/core/Button";
 import Moment from "react-moment";
 import ReactSVG from "react-svg";
 import Skills from "./Skills";
 import "../../scss/Profile.scss";
+import ExternalLinkButtons from "../layout/ExternalLinkButtons";
 
 const Profile = () => {
   useEffect(() => {
     document.title = aboutMe.type;
   });
 
-  const links =
-    aboutMe && aboutMe.links
-      ? aboutMe.links.map(link => {
-          return (
-            <a
-              key={link.name}
-              href={link.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button variant="contained" color="primary">
-                {link.name} {<link.icon />}
-              </Button>
-            </a>
-          );
-        })
-      : null;
-
   const about =
     aboutMe && aboutMe.about
       ? aboutMe.about.map((para, i) => <p key={i}>{para}</p>)
       : null;
 
-  const firstImage =
+  const profileImage =
     aboutMe && aboutMe.images ? (
       <img className="profile-image" src={aboutMe.images[0]} alt="Me" />
     ) : null;
@@ -59,21 +41,16 @@ const Profile = () => {
         })
       : null;
 
-  // const images =
-  //   aboutMe && aboutMe.images
-  //     ? aboutMe.images.map((image, i) => <img key={i} src={image} alt="Me" />)
-  //     : null;
-
   return aboutMe ? (
-    <div className="Profile">
+    <main className="Profile">
       {<aboutMe.icon className="profile-icon" />}
       <h1>{aboutMe.name}</h1>
-      {firstImage}
-      {links}
+      {profileImage}
+      <ExternalLinkButtons links={aboutMe.links} />
       {about}
       <Skills skills={aboutMe.skills} />
       {education}
-    </div>
+    </main>
   ) : (
     <div className="Profile">Loading...</div>
   );

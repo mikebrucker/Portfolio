@@ -5,9 +5,10 @@ import "../../scss/ProfileSummary.scss";
 import { aboutMe } from "../../data";
 import Skills from "./Skills";
 
+// Displays Summary of Profile on landing page
 const ProfileSummary = ({ scrollToTopOfPage }) => {
   return aboutMe ? (
-    <div id="topOfProfileSummary" className="ProfileSummaryRoot">
+    <section id="topOfProfileSummary" className="ProfileSummaryRoot">
       <Link
         color="secondary"
         component={RouterLink}
@@ -26,7 +27,7 @@ const ProfileSummary = ({ scrollToTopOfPage }) => {
           </div>
         </div>
       </Link>
-    </div>
+    </section>
   ) : (
     <div id="topOfProfileSummary" className="ProfileSummary">
       Loading Profile...

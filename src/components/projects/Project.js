@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import { projects } from "../../data";
-import { FaGithub } from "react-icons/fa";
-import Button from "@material-ui/core/Button";
 import "../../scss/Project.scss";
 import Skills from "../profile/Skills";
+import ExternalLinkButtons from "../layout/ExternalLinkButtons";
 
 const Project = ({ location }) => {
   useEffect(() => {
@@ -11,67 +10,56 @@ const Project = ({ location }) => {
       project && project.name ? project.name : "Nothing To See Here";
   });
 
+  // Get the browser's location - mywebsite.com/projectName
   const projectName =
     location && location.pathname ? location.pathname.substring(1) : null;
 
+  // If projectName matches the name of a project, with spaces removed,
   const project = projectName
-    ? projects.filter(proj => proj.name.replace(/\s/g, "") === projectName)[0]
+    ? projects.filter(
+        proj =>
+          proj.name.replace(/\s/g, "").toLowerCase() ===
+          projectName.toLowerCase()
+      )[0]
     : null;
 
-  const projectIcon = project && project.icon ? <project.icon /> : null;
-
+  // Built with this {techStack} HTML, CSS, JavaScript.
   const techStack =
-    project &&
-    project.tech &&
-    project.tech.map((tech, i, arr) => {
-      return arr.length - 1 !== i ? (
-        <span key={tech}>{tech}, </span>
-      ) : (
-        // last item
-        <span key={tech}>{tech}.</span>
-      );
-    });
+    project && project.tech
+      ? project.tech.map((tech, i, arr) => {
+          return arr.length - 1 !== i ? (
+            <span key={tech}>{tech}, </span>
+          ) : (
+            // last item
+            <span key={tech}>{tech}.</span>
+          );
+        })
+      : null;
 
-  const links =
-    project && project.links ? (
-      <div>
-        <a href={project.links.live} target="_blank" rel="noopener noreferrer">
-          <Button variant="contained" color="primary">
-            Live {projectIcon}
-          </Button>
-        </a>
-        <a href={project.links.repo} target="_blank" rel="noopener noreferrer">
-          <Button variant="contained" color="primary">
-            Repo <FaGithub />
-          </Button>
-        </a>
-      </div>
-    ) : null;
-
+  // Paragraphs about the project
   const detail =
     project && project.detail
       ? project.detail.map((detail, i) => <p key={i}>{detail}</p>)
       : null;
 
+  // All project images
   const images =
-    project &&
-    project.images &&
-    project.images.map((img, i) => {
-      return <img key={i} src={img} alt="project" />;
-    });
+    project && project.images
+      ? project.images.map((img, i) => <img key={i} src={img} alt="project" />)
+      : null;
 
   return project ? (
-    <div className="Project">
+    <main className="Project">
       <h1>{project.name}</h1>
       <h3>Built with {techStack}</h3>
       <Skills skills={project.tech} />
-      {links}
+      <ExternalLinkButtons links={project.links} />
       <div>{detail}</div>
       <div>{images}</div>
-    </div>
+    </main>
   ) : (
     <div className="Project">
-      <h1>No project with that name</h1>
+      <h1>There is no project with that name.</h1>
       <h2>But just look at how that footer stays at the bottom!</h2>
       <h2>Pretty sweet, Eh?</h2>
     </div>

@@ -3,23 +3,20 @@ import { projects } from "../../data";
 import ProjectSummary from "./ProjectSummary";
 import "../../scss/Projects.scss";
 
+// Displays all ProjectSummaries on landing page
 const Projects = ({ scrollToTopOfPage }) => {
-  const myProjects = projects.map((project, i, arr) => {
-    return arr.length - 1 !== i ? (
-      <ProjectSummary
-        key={project.id}
-        project={project}
-        scrollToTopOfPage={scrollToTopOfPage}
-      />
-    ) : (
-      // last item
-      <ProjectSummary
-        key={project.id}
-        project={project}
-        scrollToTopOfPage={scrollToTopOfPage}
-      />
-    );
-  });
+  const myProjects = projects
+    ? projects.map(project => {
+        return (
+          <ProjectSummary
+            key={project.id}
+            project={project}
+            scrollToTopOfPage={scrollToTopOfPage}
+          />
+        );
+      })
+    : "Loading...";
+
   return <div className="Projects">{myProjects}</div>;
 };
 

@@ -1,19 +1,19 @@
 .AppLogo {
-  animation: App-logo-spin infinite 20s linear,
-    App-logo-size infinite 60s ease-in-out;
   height: 40vmin;
   pointer-events: none;
+  animation: App-logo-spin infinite 20s linear,
+    App-logo-size infinite 60s ease-in-out;
 }
 
 .ReactLogo {
-  overflow: hidden;
+  color: white;
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
+  overflow: hidden;
   animation: change-background-color infinite 10s ease-in-out;
 }
 

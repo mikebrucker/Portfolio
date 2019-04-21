@@ -19,7 +19,7 @@ import blobMan0 from "./images/blob-man0.png";
 import blobMan1 from "./images/blob-man1.png";
 import blobMan2 from "./images/blob-man2.png";
 
-import towerDefense from "./images/tower-defense.png";
+import towerDefense0 from "./images/tower-defense0.png";
 
 import blog0 from "./images/blog0.png";
 import blog1 from "./images/blog1.png";
@@ -157,10 +157,18 @@ export const projects = [
     id: "1",
     name: "Rostered",
     icon: FaHockeyPuck,
-    links: {
-      live: "https://rostered-mwb.firebaseapp.com",
-      repo: "https://github.com/mikebrucker/Rostered"
-    },
+    links: [
+      {
+        name: "Live",
+        link: "https://rostered-mwb.firebaseapp.com",
+        icon: FaHockeyPuck
+      },
+      {
+        name: "Repo",
+        link: "https://github.com/mikebrucker/Rostered",
+        icon: FaGithub
+      }
+    ],
     tech: ["React", "Redux", "Firebase", "Firestore"],
     detail: [
       "Rostered is an app which features full CRUD functionality that I built to keep track of all of the hockey teams I play on, including the players, games, and schedules. It is written in React, utilizes Redux for state managemant, and uses Google Firebase's data storage Firestore for the back-end. This single page app nests many components to add, edit, and delete each piece of data. Each component is initially hidden until you click the corresponding button.",
@@ -172,10 +180,18 @@ export const projects = [
     id: "2",
     name: "Brucker Board",
     icon: GiOctopus,
-    links: {
-      live: "https://bruckerboard.firebaseapp.com",
-      repo: "https://github.com/mikebrucker/BruckerBoard"
-    },
+    links: [
+      {
+        name: "Live",
+        link: "https://bruckerboard.firebaseapp.com",
+        icon: GiOctopus
+      },
+      {
+        name: "Repo",
+        link: "https://github.com/mikebrucker/BruckerBoard",
+        icon: FaGithub
+      }
+    ],
     tech: ["React", "Sass"],
     detail: [
       "This is a ToDo board like a Trello board. Keep track of ToDos in columns of Backlog, ToDo, InProgress, Completed. Each ToDo can be removed and has a priority of low, medium, or high, which is indicated by it's border color. ToDo's also have a timestamp of when it was created. Arrow buttons can move the ToDo into the next or previous column.",
@@ -187,10 +203,18 @@ export const projects = [
     id: "3",
     name: "Wheel of JavaScript",
     icon: GiCartwheel,
-    links: {
-      live: "https://mikebrucker.github.io/Wheel-Of-Fortune/",
-      repo: "https://github.com/mikebrucker/Wheel-Of-Fortune"
-    },
+    links: [
+      {
+        name: "Live",
+        link: "https://mikebrucker.github.io/Wheel-Of-Fortune/",
+        icon: GiCartwheel
+      },
+      {
+        name: "Repo",
+        link: "https://github.com/mikebrucker/Wheel-Of-Fortune",
+        icon: FaGithub
+      }
+    ],
     tech: ["JavaScript", "jQuery", "HTML", "CSS"],
     detail: [
       "This was my JavaScript Capstone project in school, the first 'big' JavaScript application I made. It can most definitely be improved but I would rather rebuild it instead. This was also the first time I ever used jQuery and I may have gotten a bit carried away with it :P. This project shows that I can learn at a very quick pace and build something that looks good and functions well.",
@@ -207,10 +231,18 @@ export const projects = [
     id: "4",
     name: "Blob Man",
     icon: GiTransparentSlime,
-    links: {
-      live: "https://blob-man.mikebrucker.com",
-      repo: "https://github.com/mikebrucker/Blob-Man"
-    },
+    links: [
+      {
+        name: "Live",
+        link: "https://blob-man.mikebrucker.com",
+        icon: GiTransparentSlime
+      },
+      {
+        name: "Repo",
+        link: "https://github.com/mikebrucker/Blob-Man",
+        icon: FaGithub
+      }
+    ],
     tech: ["JavaScript", "Phaser3", "Webpack", "Tiled"],
     detail: [
       "The first game I built was just one level of this Pac-Man clone game for a group project. In my free time I expanded it into a full game. I learned Phaser3, a JS game engine library, and built this game (the first level) in a span of ten days. Since then I've fixed bugs, added pause for the game and sounds, and added a custom start option if you just want to challenge yourself with tons of skeletons coming after you.",
@@ -226,10 +258,18 @@ export const projects = [
     id: "5",
     name: "Tower Defense",
     icon: FaDragon,
-    links: {
-      live: "https://tower-defense.mikebrucker.com",
-      repo: "https://github.com/mikebrucker/Tower-Defense"
-    },
+    links: [
+      {
+        name: "Live",
+        link: "https://tower-defense.mikebrucker.com",
+        icon: FaDragon
+      },
+      {
+        name: "Repo",
+        link: "https://github.com/mikebrucker/Tower-Defense",
+        icon: FaGithub
+      }
+    ],
     tech: ["JavaScript", "Phaser3", "Webpack", "Tiled"],
     detail: [
       "The second game I made was my final project, a Tower Defense Game. There is a fixed path version and enemy finds it's own path version. I learned of Phaser3, a JS game engine library just weeks before making this, and built this with it.",
@@ -241,16 +281,24 @@ export const projects = [
       "If 20 enemies escape you lose!",
       "Survive all 30 round and win!!!"
     ],
-    images: [towerDefense]
+    images: [towerDefense0]
   },
   {
     id: "6",
     name: "Blog in Gray",
     icon: FaBookDead,
-    links: {
-      live: "https://blog-in-gray.herokuapp.com",
-      repo: "https://github.com/mikebrucker/Rails-Blog"
-    },
+    links: [
+      {
+        name: "Live",
+        link: "https://blog-in-gray.herokuapp.com",
+        icon: FaBookDead
+      },
+      {
+        name: "Repo",
+        link: "https://github.com/mikebrucker/Rails-Blog",
+        icon: FaBookDead
+      }
+    ],
     tech: ["Ruby", "Rails", "PostgreSQL", "SQLite3"],
     detail: [
       "Blog written in Ruby on Rails. This application maintains a database of Users, Posts, and Comments. Features full CRUD functionality. With JavaScript, Users can edit their comments inline without redirecting to a new page."
@@ -261,10 +309,18 @@ export const projects = [
     id: "7",
     name: "Portfolio Site",
     icon: FaRegUser,
-    links: {
-      live: "https://mikebrucker.com",
-      repo: "https://github.com/mikebrucker/Portfolio"
-    },
+    links: [
+      {
+        name: "Live",
+        link: "https://mikebrucker.com",
+        icon: FaRegUser
+      },
+      {
+        name: "Repo",
+        link: "https://github.com/mikebrucker/Portfolio",
+        icon: FaRegUser
+      }
+    ],
     tech: ["React", "Material-UI", "Sass"],
     detail: [
       "This is my portfolio site that you are looking at already. Is this recursive or redundant?"
