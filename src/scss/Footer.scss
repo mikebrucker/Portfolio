@@ -10,10 +10,10 @@
 
   .footer-link-home {
     transition: color 0.33s;
-  }
 
-  .footer-link-home:hover {
-    color: antiquewhite;
+    &:hover {
+      color: antiquewhite;
+    }
   }
 
   .footer-links {
@@ -22,10 +22,10 @@
     svg {
       vertical-align: text-top;
       transition: fill 0.33s;
-    }
 
-    svg:hover {
-      fill: antiquewhite;
+      &:hover {
+        fill: antiquewhite;
+      }
     }
   }
 }

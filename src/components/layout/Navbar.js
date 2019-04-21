@@ -10,9 +10,13 @@ import ListItem from "@material-ui/core/ListItem";
 import { projects, aboutMe } from "../../data";
 
 const styles = theme => ({
-  center: {
+  title: {
     flex: 1,
     textAlign: "left",
+    fontSize: "3vw",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "1.4em"
+    },
     transition: "color 0.33s",
     "&:hover": {
       color: "antiquewhite"
@@ -38,12 +42,6 @@ const styles = theme => ({
     padding: "20px 0 6px 36px",
     textAlign: "left",
     margin: "0 auto"
-  },
-  title: {
-    fontSize: "3vw",
-    [theme.breakpoints.down("xs")]: {
-      fontSize: "24px"
-    }
   },
   navMenu: {
     [theme.breakpoints.down("sm")]: {
@@ -78,7 +76,8 @@ class Navbar extends Component {
     const { classes } = this.props;
 
     // navMenu is all the links with just icons to be shown in nav when browser is 960px width or bigger
-    // Projects, Profile, External Links
+    // Projects: Projects
+    // Personal: Profile, External Links
     const navMenu = (
       <div className={classes.navMenu}>
         {projects &&
@@ -142,7 +141,8 @@ class Navbar extends Component {
     );
 
     // sideMenu is all the links with names to pop over the screen on the right when menu button is clicked
-    // Projects, Profile, External Links
+    // Projects: Projects
+    // Personal: Profile, External Links
     const sideMenu = (
       <List className={classes.background}>
         <h6 className={classes.listSubHeader}>Projects</h6>
@@ -204,13 +204,13 @@ class Navbar extends Component {
         <AppBar position="sticky" color="primary">
           <Toolbar>
             <Link
-              className={classes.center}
+              className={classes.title}
               color="secondary"
               component={RouterLink}
               underline="none"
               to="/"
             >
-              <div className={classes.title}>Mike Brucker Portfolio</div>
+              Mike Brucker Portfolio
             </Link>
             {navMenu}
             <IconButton

@@ -1,20 +1,22 @@
 .Projects {
-  .ProjectSummary {
-    margin: 0 auto;
-    max-width: 992px;
-    padding: 10px 10px 50px;
-
-    img {
-      max-width: 600px;
-      border: 4px solid antiquewhite;
+  .ProjectSummaryRoot {
+    &:nth-child(odd) {
+      background-color: #00e5ff;
     }
-  }
 
-  .ProjectSummaryRoot:nth-child(odd) {
-    background-color: #00e5ff;
-  }
+    &:nth-child(even) {
+      background-color: #0097a7;
+    }
 
-  .ProjectSummaryRoot:nth-child(even) {
-    background-color: #0097a7;
+    .ProjectSummary {
+      margin: 0 auto;
+      max-width: 992px;
+      padding: 10px 10px 50px;
+
+      img {
+        max-width: 600px;
+        border: 4px solid antiquewhite;
+      }
+    }
   }
 }
