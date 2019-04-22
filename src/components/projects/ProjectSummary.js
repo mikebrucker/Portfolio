@@ -6,15 +6,25 @@ import "../../scss/Projects.scss";
 // Shows just the project name, tech, and first picture
 const ProjectSummary = ({ project }) => {
   const techStack =
-    project &&
-    project.tech.map((tech, i, arr) => {
-      return arr.length - 1 !== i ? (
-        <span key={tech}>{tech}, </span>
-      ) : (
-        // last item
-        <span key={tech}>{tech}.</span>
-      );
-    });
+    project && project.tech && project.tech.length === 1
+      ? project.tech.map(tech => <span key={tech}>{tech}.</span>)
+      : project.tech.length === 2
+      ? project.tech.map((tech, i, arr) => {
+          return arr.length - 1 !== i ? (
+            <span key={tech}>{tech}</span>
+          ) : (
+            // last item
+            <span key={tech}> and {tech}.</span>
+          );
+        })
+      : project.tech.map((tech, i, arr) => {
+          return arr.length - 1 !== i ? (
+            <span key={tech}>{tech}, </span>
+          ) : (
+            // last item
+            <span key={tech}>and {tech}.</span>
+          );
+        });
 
   return project ? (
     <section className="ProjectSummaryRoot">

@@ -25,17 +25,31 @@ const Project = ({ location, scrollToTopOfPage }) => {
     : null;
 
   // Built with this {techStack} HTML, CSS, JavaScript.
+  // return arr.length===1 ? (
+  //  <span key={tech}>{tech}.</span>
+  //  ) : arr.length===2 ? (
+  //   <span key={tech}>{tech}.</span>
+  // )
   const techStack =
-    project && project.tech
+    project && project.tech && project.tech.length === 1
+      ? project.tech.map(tech => <span key={tech}>{tech}.</span>)
+      : project.tech.length === 2
       ? project.tech.map((tech, i, arr) => {
+          return arr.length - 1 !== i ? (
+            <span key={tech}>{tech}</span>
+          ) : (
+            // last item
+            <span key={tech}> and {tech}.</span>
+          );
+        })
+      : project.tech.map((tech, i, arr) => {
           return arr.length - 1 !== i ? (
             <span key={tech}>{tech}, </span>
           ) : (
             // last item
-            <span key={tech}>{tech}.</span>
+            <span key={tech}>and {tech}.</span>
           );
-        })
-      : null;
+        });
 
   // Paragraphs about the project
   const detail =
