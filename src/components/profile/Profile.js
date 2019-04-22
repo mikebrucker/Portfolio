@@ -6,9 +6,10 @@ import Skills from "./Skills";
 import "../../scss/Profile.scss";
 import ExternalLinkButtons from "../layout/ExternalLinkButtons";
 
-const Profile = () => {
+const Profile = ({ scrollToTopOfPage }) => {
   useEffect(() => {
     document.title = aboutMe.type;
+    scrollToTopOfPage();
   });
 
   const about =

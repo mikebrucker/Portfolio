@@ -12,16 +12,14 @@ import theme from "./material-ui-theme/theme";
 
 class App extends Component {
   scrollToTopOfPage = () => {
-    document.getElementById("topOfPage").scrollIntoView({
-      behavior: "smooth",
-      inline: "center"
+    document.getElementById("root").scrollIntoView({
+      behavior: "smooth"
     });
   };
 
   scrollToProfileSummary = () => {
     document.getElementById("topOfProfileSummary").scrollIntoView({
-      behavior: "smooth",
-      inline: "center"
+      behavior: "smooth"
     });
   };
 
@@ -30,7 +28,7 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
         <Router>
           <CssBaseline />
-          <Navbar />
+          <Navbar scrollToTopOfPage={this.scrollToTopOfPage} />
           <Switch>
             <Route
               exact
@@ -44,8 +42,26 @@ class App extends Component {
               )}
             />
             <Route exact path="/spinninglogo" component={ReactLogo} />
-            <Route exact path="/profile" component={Profile} />
-            <Route exact path="/:project" component={Project} />
+            <Route
+              exact
+              path="/profile"
+              render={props => (
+                <Profile
+                  {...props}
+                  scrollToTopOfPage={this.scrollToTopOfPage}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/:project"
+              render={props => (
+                <Project
+                  {...props}
+                  scrollToTopOfPage={this.scrollToTopOfPage}
+                />
+              )}
+            />
           </Switch>
           <div className="footer-grow" />
           <Footer scrollToTopOfPage={this.scrollToTopOfPage} />

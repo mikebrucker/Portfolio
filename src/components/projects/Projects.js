@@ -4,16 +4,10 @@ import ProjectSummary from "./ProjectSummary";
 import "../../scss/Projects.scss";
 
 // Displays all ProjectSummaries on landing page
-const Projects = ({ scrollToTopOfPage }) => {
+const Projects = () => {
   const myProjects = projects
     ? projects.map(project => {
-        return (
-          <ProjectSummary
-            key={project.id}
-            project={project}
-            scrollToTopOfPage={scrollToTopOfPage}
-          />
-        );
+        return <ProjectSummary key={project.id} project={project} />;
       })
     : "Loading...";
 

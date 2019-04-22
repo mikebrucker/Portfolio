@@ -13,20 +13,31 @@ const styles = theme => ({
   title: {
     flex: 1,
     textAlign: "left",
-    fontSize: "3vw",
+    fontSize: "2.5em",
+    fontFamily: "Metal Mania, serif",
     [theme.breakpoints.down("xs")]: {
-      fontSize: "1.4em"
+      fontSize: "1.7em"
     },
     transition: "color 0.33s",
     "&:hover": {
       color: "antiquewhite"
+    },
+    "& svg": {
+      verticalAlign: "-10%"
     }
   },
+  appBar: {
+    overflow: "hidden",
+    position: "sticky",
+    top: 0,
+    bottom: "auto",
+    zIndex: "11"
+  },
   background: {
-    backgroundColor: "#00e5ff"
+    backgroundColor: "#00bcd4"
   },
   openDrawer: {
-    backgroundColor: "#00e5ff",
+    backgroundColor: "#00bcd4",
     height: "100%",
     minWidth: "240px",
     width: "30vw"
@@ -42,6 +53,13 @@ const styles = theme => ({
     padding: "20px 0 6px 36px",
     textAlign: "left",
     margin: "0 auto"
+  },
+  sideMenuItem: {
+    transition: "0.33s all",
+    "&:hover": {
+      color: "antiquewhite",
+      backgroundColor: "#006064"
+    }
   },
   navMenu: {
     [theme.breakpoints.down("sm")]: {
@@ -157,7 +175,7 @@ class Navbar extends Component {
                 color="secondary"
                 underline="none"
               >
-                <ListItem button>
+                <ListItem className={classes.sideMenuItem} button>
                   {projectIcon}&nbsp;{project.name}
                 </ListItem>
               </Link>
@@ -165,17 +183,18 @@ class Navbar extends Component {
           })}
 
         <h6 className={classes.listSubHeader}>Personal</h6>
-        <RouterLink
+        <Link
           to={`/${aboutMe.type.replace(/\s/g, "")}`}
+          component={RouterLink}
           color="secondary"
           underline="none"
         >
-          <ListItem button>
+          <ListItem className={classes.sideMenuItem} button>
             {aboutMe && aboutMe.icon ? <aboutMe.icon /> : null}
             &nbsp;
             {aboutMe && aboutMe.type ? aboutMe.type : null}
           </ListItem>
-        </RouterLink>
+        </Link>
 
         {aboutMe &&
           aboutMe.links &&
@@ -184,13 +203,14 @@ class Navbar extends Component {
             return (
               <Link
                 key={link.link}
+                className={classes.sideMenuItem}
                 href={link.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 color="secondary"
                 underline="none"
               >
-                <ListItem button>
+                <ListItem className={classes.sideMenuItem} button>
                   {linkIcon}&nbsp;{link.name}
                 </ListItem>
               </Link>
@@ -200,17 +220,18 @@ class Navbar extends Component {
     );
 
     return (
-      <nav id="topOfPage" className="Navbar">
-        <AppBar position="sticky" color="primary">
+      <nav className={classes.appBar}>
+        <AppBar position="static" color="primary">
           <Toolbar>
             <Link
               className={classes.title}
+              onClick={this.props.scrollToTopOfPage}
               color="secondary"
               component={RouterLink}
               underline="none"
               to="/"
             >
-              Mike Brucker Portfolio
+              <aboutMe.icon /> MIKE BRUCKER
             </Link>
             {navMenu}
             <IconButton

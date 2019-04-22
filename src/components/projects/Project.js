@@ -4,10 +4,11 @@ import "../../scss/Project.scss";
 import Skills from "../profile/Skills";
 import ExternalLinkButtons from "../layout/ExternalLinkButtons";
 
-const Project = ({ location }) => {
+const Project = ({ location, scrollToTopOfPage }) => {
   useEffect(() => {
     document.title =
       project && project.name ? project.name : "Nothing To See Here";
+    scrollToTopOfPage();
   });
 
   // Get the browser's location - mywebsite.com/projectName
@@ -50,6 +51,8 @@ const Project = ({ location }) => {
 
   return project ? (
     <main className="Project">
+      {<project.icon className="project-icon" />}
+
       <h1>{project.name}</h1>
       <h3>Built with {techStack}</h3>
       <Skills skills={project.tech} />

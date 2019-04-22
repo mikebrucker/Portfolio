@@ -29,7 +29,7 @@ const Footer = ({ classes, scrollToTopOfPage }) => {
             onClick={scrollToTopOfPage}
             to="/"
           >
-            &copy; {new Date().getFullYear()} Mike Brucker{" "}
+            &copy; {new Date().getFullYear()} MIKE BRUCKER{" "}
           </RouterLink>
           <div className="footer-links">
             {aboutMe &&

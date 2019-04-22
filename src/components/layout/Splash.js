@@ -4,29 +4,29 @@ import mikeSkyDiveGif from "../../images/mikeskydive.gif";
 import Projects from "../projects/Projects";
 import ProfileSummary from "../profile/ProfileSummary";
 
-const Splash = ({ scrollToTopOfPage, scrollToProfileSummary }) => {
+const Splash = ({ scrollToProfileSummary }) => {
   useEffect(() => {
     document.title = "Mike Brucker";
   });
 
-  // Going with just the gif for now instead of the long youtube video which would only display on desktop.
-
-  // const splashVideo = navigator.userAgent.match(/Mobile|Android|iPhone/gi) ? (
-  //   <img src={mikeskydivegif} alt="Me Skydiving" />
-  // ) : (
-  //   <div className="splash-iframe">
-  //     <iframe
-  //       title="Me Skydiving"
-  //       src="https://www.youtube.com/embed/gjrrtx3VyUQ?&mute=1&autoplay=1&controls=0&loop=1​&disablekb=1&modestbranding=1&autohide=1&playlist=gjrrtx3VyUQ"
-  //       frameBorder="0"
-  //       allow="autoplay"
-  //     />
-  //   </div>
-  // );
+  // if the browser specifies a mobile device the gif will play
+  // if not then it should be a desktop and the youtube video will play in a playlist
+  const splashVideo = navigator.userAgent.match(/Mobile|Android|iPhone/gi) ? (
+    <img src={mikeSkyDiveGif} alt="Me Skydiving" />
+  ) : (
+    <div className="splash-iframe">
+      <iframe
+        title="Me Skydiving"
+        src="https://www.youtube.com/embed/bVwJO6gABTM?&mute=1&loop=1​&autoplay=1&controls=0&disablekb=1&modestbranding=1&autohide=1&rel=0&playlist=bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM,bVwJO6gABTM"
+        frameBorder="0"
+        allow="autoplay"
+      />
+    </div>
+  );
 
   const splashScreenGif = mikeSkyDiveGif ? (
     <div onClick={scrollToProfileSummary}>
-      <img id="splashGif" src={mikeSkyDiveGif} alt="Me Skydiving" />
+      {splashVideo}
       <div id="splashText" className="splash-text-container">
         <div className="splash-text-first splash-text">
           Hi! I'm Mike Brucker, a Web Developer
@@ -41,6 +41,11 @@ const Splash = ({ scrollToTopOfPage, scrollToProfileSummary }) => {
         <div className="splash-text-third splash-text">
           Come Dive Into My Code Below!
         </div>
+        <div className="splash-text-container">
+          <div className="splash-text-fourth splash-text">
+            Try to Find the Secret Page!
+          </div>
+        </div>
       </div>
     </div>
   ) : null;
@@ -48,8 +53,8 @@ const Splash = ({ scrollToTopOfPage, scrollToProfileSummary }) => {
   return (
     <main className="Splash">
       {splashScreenGif}
-      <ProfileSummary scrollToTopOfPage={scrollToTopOfPage} />
-      <Projects scrollToTopOfPage={scrollToTopOfPage} />
+      <ProfileSummary />
+      <Projects />
     </main>
   );
 };

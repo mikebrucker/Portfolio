@@ -4,7 +4,7 @@ import Link from "@material-ui/core/Link";
 import "../../scss/Projects.scss";
 
 // Shows just the project name, tech, and first picture
-const ProjectSummary = ({ project, scrollToTopOfPage }) => {
+const ProjectSummary = ({ project }) => {
   const techStack =
     project &&
     project.tech.map((tech, i, arr) => {
@@ -22,7 +22,6 @@ const ProjectSummary = ({ project, scrollToTopOfPage }) => {
         color="secondary"
         component={RouterLink}
         underline="none"
-        onClick={scrollToTopOfPage}
         to={`/${project.name.replace(/\s/g, "")}`}
       >
         <div className="ProjectSummary">

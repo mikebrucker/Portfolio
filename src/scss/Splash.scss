@@ -16,7 +16,8 @@
   }
 
   .splash-text {
-    font-size: 8vw;
+    font-family: "Permanent Marker", sans-serif;
+    font-size: 9vw;
     font-weight: bolder;
     color: #00bcd4;
     text-shadow: -5px -5px 10px #263238, 5px -5px 10px #263238,
@@ -24,15 +25,19 @@
   }
 
   .splash-text-first {
-    animation: text1 infinite 30s ease-in-out;
+    animation: text1 infinite 32s ease-in-out;
   }
 
   .splash-text-second {
-    animation: text2 infinite 30s ease-in-out;
+    animation: text2 infinite 32s ease-in-out;
   }
 
   .splash-text-third {
-    animation: text3 infinite 30s ease-in-out;
+    animation: text3 infinite 32s ease-in-out;
+  }
+
+  .splash-text-fourth {
+    animation: text4 infinite 32s ease-in-out;
   }
 
   img {
@@ -43,59 +48,70 @@
 
   // In case I want to add the YouTube video splash screen back
 
-  // .splash-iframe {
-  //   width: 100%;
-  //   height: 100%;
-  //   position: relative;
-  //   overflow: hidden;
-  //   padding-top: 56.25%;
-  //   margin-bottom: -1px;
+  .splash-iframe {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+    margin-bottom: -1px;
 
-  //   iframe {
-  //     z-index: -99;
-  //     position: absolute;
-  //     top: 0;
-  //     left: 0;
-  //     width: 100%;
-  //     height: 100%;
-  //     border: 0;
-  //   }
-  // }
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  }
 }
 
 @keyframes text1 {
   0%,
-  33%,
+  25%,
   100% {
     opacity: 0;
   }
-  28%,
-  5% {
+  22%,
+  3% {
     opacity: 1;
   }
 }
 
 @keyframes text2 {
   0%,
-  33%,
-  66%,
+  25%,
+  50%,
   100% {
     opacity: 0;
   }
-  38%,
-  61% {
+  28%,
+  47% {
     opacity: 1;
   }
 }
 
 @keyframes text3 {
   0%,
-  66%,
+  50%,
+  75%,
   100% {
     opacity: 0;
   }
-  71%,
-  95% {
+  53%,
+  72% {
+    opacity: 1;
+  }
+}
+@keyframes text4 {
+  0%,
+  75%,
+  100% {
+    opacity: 0;
+  }
+  78%,
+  97% {
     opacity: 1;
   }
 }
