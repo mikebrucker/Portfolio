@@ -296,7 +296,7 @@ export const projects = [
       {
         name: "Repo",
         link: "https://github.com/mikebrucker/Rails-Blog",
-        icon: FaBookDead
+        icon: FaGithub
       }
     ],
     tech: ["Ruby", "Rails", "PostgreSQL", "SQLite3"],
@@ -318,7 +318,7 @@ export const projects = [
       {
         name: "Repo",
         link: "https://github.com/mikebrucker/Portfolio",
-        icon: FaRegUser
+        icon: FaGithub
       }
     ],
     tech: ["React", "Material-UI", "Sass"],
