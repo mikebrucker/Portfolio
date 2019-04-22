@@ -231,7 +231,7 @@ class Navbar extends Component {
               underline="none"
               to="/"
             >
-              <aboutMe.icon /> MIKE BRUCKER
+              <aboutMe.icon /> {aboutMe ? aboutMe.name : null}
             </Link>
             {navMenu}
             <IconButton

@@ -29,7 +29,7 @@ const Footer = ({ classes, scrollToTopOfPage }) => {
             onClick={scrollToTopOfPage}
             to="/"
           >
-            &copy; {new Date().getFullYear()} MIKE BRUCKER{" "}
+            &copy; {new Date().getFullYear()} {aboutMe ? aboutMe.name : null}{" "}
           </RouterLink>
           <div className="footer-links">
             {aboutMe &&
@@ -53,7 +53,7 @@ const Footer = ({ classes, scrollToTopOfPage }) => {
               })}
           </div>
         </Typography>
-        <RouterLink onClick={scrollToTopOfPage} to="/spinninglogo">
+        <RouterLink onClick={scrollToTopOfPage} to="/secretpage">
           <FaReact className="footer-logo" />
         </RouterLink>
       </AppBar>

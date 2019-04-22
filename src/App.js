@@ -41,7 +41,7 @@ class App extends Component {
                 />
               )}
             />
-            <Route exact path="/spinninglogo" component={ReactLogo} />
+            <Route exact path="/secretpage" component={ReactLogo} />
             <Route
               exact
               path="/profile"
