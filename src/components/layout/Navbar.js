@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, NavLink } from "react-router-dom";
 import { AppBar, Toolbar, IconButton } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import Link from "@material-ui/core/Link";
@@ -76,6 +76,17 @@ const styles = theme => ({
   },
   navMenuSVG: {
     transition: "fill 0.33s"
+  },
+  activePage: {
+    backgroundColor: "#0097a7",
+    borderRadius: "100px",
+    color: "antiquewhite",
+    "& div": {
+      backgroundColor: "#0097a7"
+    },
+    "& svg": {
+      fill: "antiquewhite"
+    }
   }
 });
 
@@ -103,16 +114,21 @@ class Navbar extends Component {
             const projectIcon = project.icon ? (
               <project.icon className={classes.navMenuSVG} />
             ) : null;
+
             return (
               <Link
-                className={classes.navMenuLink}
                 key={project.id}
+                className={classes.navMenuLink}
+                activeClassName={classes.activePage}
                 to={`/${project.name.replace(/\s/g, "")}`}
-                component={RouterLink}
+                component={NavLink}
                 color="secondary"
                 underline="none"
               >
-                <IconButton className={classes.navMenuLink} color="secondary">
+                <IconButton
+                  className={`${classes.navMenuLink}`}
+                  color="secondary"
+                >
                   {projectIcon}
                 </IconButton>
               </Link>
@@ -121,8 +137,9 @@ class Navbar extends Component {
 
         <Link
           className={classes.navMenuLink}
+          activeClassName={classes.activePage}
           to={`/${aboutMe.type.replace(/\s/g, "")}`}
-          component={RouterLink}
+          component={NavLink}
           color="secondary"
           underline="none"
         >
@@ -139,6 +156,7 @@ class Navbar extends Component {
             const aboutMeIcon = about.icon ? (
               <about.icon className={classes.navMenuSVG} />
             ) : null;
+
             return (
               <Link
                 className={classes.navMenuLink}
@@ -167,13 +185,15 @@ class Navbar extends Component {
         {projects &&
           projects.map(project => {
             const projectIcon = project.icon ? <project.icon /> : null;
+
             return (
               <Link
                 key={project.id}
                 to={`/${project.name.replace(/\s/g, "")}`}
-                component={RouterLink}
+                component={NavLink}
                 color="secondary"
                 underline="none"
+                activeClassName={classes.activePage}
               >
                 <ListItem className={classes.sideMenuItem} button>
                   {projectIcon}&nbsp;{project.name}
@@ -185,9 +205,10 @@ class Navbar extends Component {
         <h6 className={classes.listSubHeader}>Personal</h6>
         <Link
           to={`/${aboutMe.type.replace(/\s/g, "")}`}
-          component={RouterLink}
+          component={NavLink}
           color="secondary"
           underline="none"
+          activeClassName={classes.activePage}
         >
           <ListItem className={classes.sideMenuItem} button>
             {aboutMe && aboutMe.icon ? <aboutMe.icon /> : null}
@@ -200,6 +221,7 @@ class Navbar extends Component {
           aboutMe.links &&
           aboutMe.links.map(link => {
             const linkIcon = link.icon ? <link.icon /> : null;
+
             return (
               <Link
                 key={link.link}
