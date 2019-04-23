@@ -13,7 +13,7 @@ const styles = theme => ({
   title: {
     flex: 1,
     textAlign: "left",
-    fontSize: "2.5em",
+    fontSize: "2.4em",
     fontFamily: "Metal Mania, serif",
     [theme.breakpoints.down("xs")]: {
       fontSize: "1.7em"

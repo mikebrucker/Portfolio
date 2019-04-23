@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import logo from "../../images/logo.svg";
+import logo from "../../images/svg/logo.svg";
 import "../../scss/ReactLogo.scss";
 
 const ReactLogo = () => {

@@ -1,41 +1,43 @@
 // Get SVG icons for tech
-import rostered0 from "./images/rostered0.png";
-import rostered1 from "./images/rostered1.png";
-import rostered2 from "./images/rostered2.png";
-import rostered3 from "./images/rostered3.png";
-import rostered4 from "./images/rostered4.png";
-import rostered5 from "./images/rostered5.png";
+import rostered0 from "./images/projects/rostered0.png";
+import rostered1 from "./images/projects/rostered1.png";
+import rostered2 from "./images/projects/rostered2.png";
+import rostered3 from "./images/projects/rostered3.png";
+import rostered4 from "./images/projects/rostered4.png";
+import rostered5 from "./images/projects/rostered5.png";
 
-import bruckerBoard0 from "./images/brucker-board0.png";
-import bruckerBoard1 from "./images/brucker-board1.png";
+import bruckerBoard0 from "./images/projects/brucker-board0.png";
+import bruckerBoard1 from "./images/projects/brucker-board1.png";
 
-import mikeBrucker from "./images/mike-brucker.jpeg";
+import mikeBrucker from "./images/projects/mike-brucker.jpeg";
 
-import wheelOfJavascript0 from "./images/wheel-of-javascript0.png";
-import wheelOfJavascript1 from "./images/wheel-of-javascript1.png";
-import wheelOfJavascript2 from "./images/wheel-of-javascript2.png";
+import wheelOfJavascript0 from "./images/projects/wheel-of-javascript0.png";
+import wheelOfJavascript1 from "./images/projects/wheel-of-javascript1.png";
+import wheelOfJavascript2 from "./images/projects/wheel-of-javascript2.png";
 
-import blobMan0 from "./images/blob-man0.png";
-import blobMan1 from "./images/blob-man1.png";
-import blobMan2 from "./images/blob-man2.png";
+import blobMan0 from "./images/projects/blob-man0.png";
+import blobMan1 from "./images/projects/blob-man1.png";
+import blobMan2 from "./images/projects/blob-man2.png";
 
-import towerDefense0 from "./images/tower-defense0.png";
+import towerDefense0 from "./images/projects/tower-defense0.png";
 
-import blog0 from "./images/blog0.png";
-import blog1 from "./images/blog1.png";
+import blog0 from "./images/projects/blog0.png";
+import blog1 from "./images/projects/blog1.png";
 
-import portfolio0 from "./images/portfolio0.png";
-import portfolio1 from "./images/portfolio1.png";
-import portfolio2 from "./images/portfolio2.png";
+import portfolio0 from "./images/projects/portfolio0.png";
+import portfolio1 from "./images/projects/portfolio1.png";
+import portfolio2 from "./images/projects/portfolio2.png";
 
-import firebase from "./images/firebase.svg";
-import phas3r from "./images/phas3r.svg";
-import redux from "./images/redux.svg";
-import gimp from "./images/gimp.svg";
-import tiled from "./images/tiled.svg";
-import materialui from "./images/materialui.svg";
-import nycda from "./images/nycda.svg";
-import temple from "./images/temple.svg";
+import firebase from "./images/svg/firebase.svg";
+import phas3r from "./images/svg/phas3r.svg";
+import redux from "./images/svg/redux.svg";
+import gimp from "./images/svg/gimp.svg";
+import tiled from "./images/svg/tiled.svg";
+import materialui from "./images/svg/materialui.svg";
+import nycda from "./images/svg/nycda.svg";
+import temple from "./images/svg/temple.svg";
+
+import resume from "./images/Mike-Brucker-Resume.pdf";
 
 import {
   FaHockeyPuck,
@@ -44,7 +46,8 @@ import {
   FaLinkedin,
   FaDragon,
   FaRegEnvelope,
-  FaRegUser
+  FaRegUser,
+  FaRegFilePdf
 } from "react-icons/fa";
 
 import {
@@ -128,6 +131,11 @@ export const aboutMe = {
       name: "Email",
       link: "mailto:michael.w.brucker@gmail.com",
       icon: FaRegEnvelope
+    },
+    {
+      name: "Resume",
+      link: resume,
+      icon: FaRegFilePdf
     }
   ],
   education: [
