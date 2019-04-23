@@ -2,7 +2,7 @@
   height: 40vmin;
   pointer-events: none;
   animation: App-logo-spin infinite 20s linear,
-    App-logo-size infinite 60s ease-in-out;
+    App-logo-size infinite 15s ease-in-out;
 }
 
 .ReactLogo {
@@ -39,7 +39,7 @@
 @keyframes App-logo-size {
   0%,
   100% {
-    height: 1vmin;
+    height: 0vmin;
   }
   50% {
     height: 100vmin;
