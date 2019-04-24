@@ -21,9 +21,8 @@
   }
 
   .profile-icon {
-    font-size: 5em;
+    font-size: 4em;
     margin: 30px auto 0;
-    vertical-align: text-bottom;
   }
 
   .education {
@@ -48,13 +47,18 @@
       padding: 10px;
       margin: 0 auto;
     }
-
-    .nycda {
+  }
+  .nycda {
+    border-color: gold;
+    .edu-icon {
       background-color: gold;
       color: black;
     }
+  }
 
-    .temple {
+  .temple {
+    border-color: maroon;
+    .edu-icon {
       background-color: maroon;
       color: snow;
     }

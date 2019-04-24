@@ -26,8 +26,8 @@ const Profile = ({ scrollToTopOfPage }) => {
     aboutMe && aboutMe.education
       ? aboutMe.education.map(edu => {
           return (
-            <div key={edu.from} className="education">
-              <h3 className={`edu-icon ${edu.class}`}>
+            <div key={edu.from} className={`education ${edu.class}`}>
+              <h3 className="edu-icon">
                 <ReactSVG src={edu.icon} />
                 {edu.school}
               </h3>
