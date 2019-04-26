@@ -24,10 +24,11 @@ const Project = ({ location, scrollToTopOfPage }) => {
       )[0]
     : null;
 
+  console.log(project);
   const techStack =
     project && project.tech && project.tech.length === 1
       ? project.tech.map(tech => <span key={tech}>{tech}</span>)
-      : project.tech.length > 1
+      : project && project.tech && project.tech.length > 1
       ? project.tech.map((tech, i, arr) => {
           return arr.length - 1 !== i ? (
             arr.length === 2 ? (

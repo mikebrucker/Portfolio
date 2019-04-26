@@ -21,7 +21,6 @@ const styles = theme => ({
 const Footer = ({ classes, scrollToTopOfPage }) => {
   return (
     <footer className="Footer">
-      <div className="footer-grow" />
       <AppBar className={classes.root} position="static" color="primary">
         <Typography color="secondary" variant="h5">
           <RouterLink
