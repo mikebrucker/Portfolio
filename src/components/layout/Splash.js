@@ -29,22 +29,13 @@ const Splash = ({ scrollToProfileSummary }) => {
       {splashVideo}
       <div id="splashText" className="splash-text-container">
         <div className="splash-text-first splash-text">
-          Hi! I'm Mike Brucker, a Web Developer
+          <div>Hi! I'm Mike Brucker, a Web Developer</div>
+          <div>Welcome to my Portfolio</div>
         </div>
       </div>
       <div className="splash-text-container">
         <div className="splash-text-second splash-text">
-          Welcome to my Portfolio
-        </div>
-      </div>
-      <div className="splash-text-container">
-        <div className="splash-text-third splash-text">
-          Come Dive Into My Code Below!
-        </div>
-        <div className="splash-text-container">
-          <div className="splash-text-fourth splash-text">
-            Try to Find the Secret Page!
-          </div>
+          Click Here to Dive Into my Code Below!
         </div>
       </div>
     </div>

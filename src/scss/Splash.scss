@@ -17,7 +17,7 @@
 
   .splash-text {
     font-family: "Permanent Marker", sans-serif;
-    font-size: 9vw;
+    font-size: 6vw;
     font-weight: bolder;
     color: #00bcd4;
     text-shadow: -5px -5px 10px #263238, 5px -5px 10px #263238,
@@ -25,19 +25,11 @@
   }
 
   .splash-text-first {
-    animation: text1 infinite 32s ease-in-out;
+    animation: text1 infinite 12s ease-in-out;
   }
 
   .splash-text-second {
-    animation: text2 infinite 32s ease-in-out;
-  }
-
-  .splash-text-third {
-    animation: text3 infinite 32s ease-in-out;
-  }
-
-  .splash-text-fourth {
-    animation: text4 infinite 32s ease-in-out;
+    animation: text2 infinite 12s ease-in-out;
   }
 
   img {
@@ -68,25 +60,24 @@
 
 @keyframes text1 {
   0%,
-  25%,
+  50%,
   100% {
     opacity: 0;
   }
-  22%,
-  3% {
+  3%,
+  47% {
     opacity: 1;
   }
 }
 
 @keyframes text2 {
   0%,
-  25%,
   50%,
   100% {
     opacity: 0;
   }
-  28%,
-  47% {
+  53%,
+  97% {
     opacity: 1;
   }
 }

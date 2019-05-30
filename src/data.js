@@ -43,6 +43,7 @@ import {
   FaHockeyPuck,
   FaBookDead,
   FaGithub,
+  FaNpm,
   FaLinkedin,
   FaDragon,
   FaRegEnvelope,
@@ -163,24 +164,33 @@ export const aboutMe = {
 export const projects = [
   {
     id: "1",
-    name: "Rostered",
+    name: "Rostered v2.0",
     icon: FaHockeyPuck,
     links: [
       {
         name: "Live",
-        link: "https://rostered-mwb.firebaseapp.com",
+        link: "https://rostered.mikebrucker.com/",
         icon: FaHockeyPuck
       },
       {
         name: "Repo",
-        link: "https://github.com/mikebrucker/Rostered",
+        link: "https://github.com/mikebrucker/Rostered-v2",
         icon: FaGithub
+      },
+      {
+        name: "npm",
+        link: "https://www.npmjs.com/package/create-id",
+        icon: FaNpm
       }
     ],
-    tech: ["React", "Redux", "Firebase", "Firestore"],
+    tech: ["React", "Redux", "Material-UI", "Firebase", "Firestore"],
     detail: [
-      "Rostered is an app which features full CRUD functionality that I built to keep track of all of the hockey teams I play on, including the players, games, and schedules. It is written in React, utilizes Redux for state managemant, and uses Google Firebase's data storage Firestore for the back-end. This single page app nests many components to add, edit, and delete each piece of data. Each component is initially hidden until you click the corresponding button.",
-      "A server side function is run when teams are created to add its own id to a key: 'value' pair, teamId: XXXXXX. This is necessary for other components to display and update the correct team data."
+      "Rostered is an app that I built to keep track of all of the hockey teams I play on, including the players, games, and schedules. It is written in React, utilizes Redux for state managemant, makes use of Google's Material Design with the Material-UI React library, and integrates Google Firebase's data storage Firestore for the back-end. This single page app nests many components to add, edit, and delete each piece of data.",
+      "Create your team, add a schedule, then add your games. You can copy a game or entire schedule to clipboard to easily text your teammates when the next game is.",
+      "The dashboard will display information about you and the next 3 games you have scheduled, the previous three games, and also allow you to export a team.",
+      "If your teammates want to also use the app but don't want to do the work to add everything themselves you can export a team. Export your team on the dashboard and copy the code to send. When your teammate uses that code the same team, schedules, games, and players will be added to their account. They can then edit the team without it affecting yours and vice versa.",
+      "I created an npm package to use with this called create-id. Each user in this app is a JSON object with arrays of data and create-id is what creates the ids for me. It can be used to generate a random string. It can also be used to create random hexadecimal colors.",
+      "The pictures below are from version 1, will be updated to version 2 soon."
     ],
     images: [rostered0, rostered1, rostered2, rostered3, rostered4, rostered5]
   },
