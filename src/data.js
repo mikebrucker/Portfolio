@@ -1,4 +1,3 @@
-// Get SVG icons for tech
 import rostered0 from "./images/projects/rostered0.png";
 import rostered1 from "./images/projects/rostered1.png";
 import rostered2 from "./images/projects/rostered2.png";
@@ -8,8 +7,6 @@ import rostered5 from "./images/projects/rostered5.png";
 
 import bruckerBoard0 from "./images/projects/brucker-board0.png";
 import bruckerBoard1 from "./images/projects/brucker-board1.png";
-
-import mikeBrucker from "./images/projects/mike-brucker.jpeg";
 
 import wheelOfJavascript0 from "./images/projects/wheel-of-javascript0.png";
 import wheelOfJavascript1 from "./images/projects/wheel-of-javascript1.png";
@@ -37,6 +34,7 @@ import materialui from "./images/svg/materialui.svg";
 import nycda from "./images/svg/nycda.svg";
 import temple from "./images/svg/temple.svg";
 
+import mikeBrucker from "./images/projects/mike-brucker.jpeg";
 import resume from "./images/Mike-Brucker-Resume.pdf";
 
 import {
@@ -81,7 +79,7 @@ export const aboutMe = {
     "Git",
     "Heroku",
     "Phaser3",
-    "Gimp"
+    "GIMP"
   ],
   tech: [
     { name: "JavaScript", icon: "devicon devicon-javascript-plain colored" },
@@ -187,7 +185,7 @@ export const projects = [
     detail: [
       "Rostered is an app that I built to keep track of all of the hockey teams I play on, including the players, games, and schedules. It is written in React, utilizes Redux for state managemant, makes use of Google's Material Design with the Material-UI React library, and integrates Google Firebase's data storage Firestore for the back-end. This single page app nests many components to add, edit, and delete each piece of data.",
       "Create your team, add a schedule, then add your games. You can copy a game or entire schedule to clipboard to easily text your teammates when the next game is.",
-      "The dashboard will display information about you and the next 3 games you have scheduled, the previous three games, and also allow you to export a team.",
+      "The dashboard will display information about you, the upcoming week's games you have scheduled, the previous week's games, and also allow you to export a team.",
       "If your teammates want to also use the app but don't want to do the work to add everything themselves you can export a team. Export your team on the dashboard and copy the code to send. When your teammate uses that code the same team, schedules, games, and players will be added to their account. They can then edit the team without it affecting yours and vice versa.",
       "I created an npm package to use with this called create-id. Each user in this app is a JSON object with arrays of data and create-id is what creates the ids for me. It can be used to generate a random string. It can also be used to create random hexadecimal colors.",
       "The pictures below are from version 1, will be updated to version 2 soon."
@@ -261,14 +259,15 @@ export const projects = [
         icon: FaGithub
       }
     ],
-    tech: ["JavaScript", "Phaser3", "Webpack", "Tiled"],
+    tech: ["JavaScript", "Phaser3", "Webpack", "Tiled", "GIMP"],
     detail: [
       "The first game I built was just one level of this Pac-Man clone game for a group project. In my free time I expanded it into a full game. I learned Phaser3, a JS game engine library, and built this game (the first level) in a span of ten days. Since then I've fixed bugs, added pause for the game and sounds, and added a custom start option if you just want to challenge yourself with tons of skeletons coming after you.",
       "You play as Blob-Man and you must collect all his blob children to pass the level.",
       "Skeleton enemies turn down corridors using a custom JavaScript function to randomize their direction.",
       "Skeletons increase in number every 2 levels.",
       "Skeletons increase in speed every level.",
-      "Your scores are added to the bottom of the page after every game. They will disappear when you close down the page."
+      "Your scores are added to the bottom of the page after every game. They will disappear when you close down the page.",
+      "Sprites were edited and customized to fit my color scheme in the open source GNU image manipulation program GIMP"
     ],
     images: [blobMan0, blobMan1, blobMan2]
   },
@@ -288,10 +287,11 @@ export const projects = [
         icon: FaGithub
       }
     ],
-    tech: ["JavaScript", "Phaser3", "Webpack", "Tiled"],
+    tech: ["JavaScript", "Phaser3", "Webpack", "Tiled", "GIMP"],
     detail: [
       "The second game I made was my final project, a Tower Defense Game. There is a fixed path version and enemy finds it's own path version. I learned of Phaser3, a JS game engine library just weeks before making this, and built this with it.",
       "Enemies come in 30 waves of 20 units. Each tower built costs 1 resource and upgrades increase by 1 each upgrade. Towers will target the closest enemy and only be able to hit that enemy; the bullet will not be blocked by other units or bullets. Bullets can only damage their intended target and disappear upon contact or if the target no longer exists.",
+      "Sprites were edited and customized to fit my color scheme in the open source GNU image manipulation program GIMP",
       "Arrow keys move the camera around.",
       "Number keys 1-5 will set a specified zoom.",
       "Number keys 9 and 0 will zoom in and out.",
