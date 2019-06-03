@@ -107,7 +107,7 @@ export const aboutMe = {
       icon: "devicon devicon-heroku-original-wordmark colored"
     },
     { name: "Phaser3", icon: phas3r },
-    { name: "Gimp", icon: gimp },
+    { name: "GIMP", icon: gimp },
     { name: "Tiled", icon: tiled }
   ],
   about: [
